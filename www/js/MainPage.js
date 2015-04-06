@@ -1,5 +1,5 @@
-var windowWidth = window.innerWidth;
-var windowHeight = window.innerHeight;
+var windowWidth = screen.width;
+var windowHeight = screen.height;
    
 
     function onLoad() {
