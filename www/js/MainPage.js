@@ -1,7 +1,7 @@
 
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
-		console.log("device ready");
+		alert("device ready");
     }
 	
 	function updateDisplay() {
