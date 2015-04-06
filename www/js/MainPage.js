@@ -1,7 +1,12 @@
+var windowWidth = window.innerWidth;
+var windowHeight = window.innerHeight;
+   
 
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
 		alert("device ready");
+		alert(windowHeight);
+		alert(windowWidth);
     }
 	
 	function updateDisplay() {
