@@ -10,12 +10,31 @@
 	<link href="jquery-mobile/jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css">
 </head>
 
-<body onload="onLoad()">
-  
-  	<h1>Event counts</h1>
+<body>
+
+<!-- Start of first page -->
+<div data-role="page" id="foo">
+
+	<div data-role="header">
+		<h1>Foo</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>I'm first in the source order so I'm shown as the page.</p>
+		<p>View internal page called <a href="#bar">bar</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="bar">
+<h1>Event counts</h1>
 	<div id="launched"></div>
 	<div id="paused"></div>
 	<div id="resumed"></div>
-
+</div><!-- /page -->
 </body>
 </html>
