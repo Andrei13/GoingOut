@@ -16,6 +16,8 @@
         
 		document.addEventListener("resume", onResume, false);
 		document.addEventListener("pause", onPause, false);
+		document.addEventListener("backbutton", onBackKeyDown, false);
+
 		updateDisplay();
     }
 
@@ -30,3 +32,7 @@
 		alert("resume");
 		updateDisplay();
     }
+
+    function onBackKeyDown() {
+       windows.close();
+}
