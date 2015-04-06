@@ -6,7 +6,7 @@
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 
-    <name>Application Lifecycle Test</name>
+    <name>GoingOut</name>
 
     <description>
         A sample application that counts the occurances of lifecycle events.
