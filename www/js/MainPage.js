@@ -34,5 +34,5 @@
     }
 
     function onBackKeyDown() {
-       windows.close();
+       navigator.app.exitApp();
 }
