@@ -1,4 +1,6 @@
 setTimeout(function(){
+	alert(screen.height);
+	alert(screen.width);
        window.location='MainPage.html';
-
-    }, 20000);
+        
+    }, 2000);
