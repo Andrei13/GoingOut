@@ -5,7 +5,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
-        <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
+        
     <name>GoingOut</name>
 
     <description>
