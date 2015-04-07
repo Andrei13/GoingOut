@@ -4,19 +4,15 @@ var windowHeight = screen.height;
 
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
-        $(document).on('click', getPosition);
-		alert("device ready");
+        $("#searchButton").click(function(){
+        	window.location = "location.html";
+        })
 		
     }
 	
 	function updateDisplay() {
 	
 	}
-
-    function getPosition()
-    {
-    	window.location = "location.html";
-    }
 
     // device APIs are available
     //
