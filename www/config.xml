@@ -19,7 +19,4 @@
     <preference name="permissions"                value="none"/>   
 	
 	<access origin="*"/>
-<preference name="SplashScreenDelay" value="10000"/>
-
-<gap:plugin name="org.apache.cordova.splashscreen" />
 </widget>
