@@ -1,3 +1,4 @@
+
 var windowWidth = screen.width;
 var windowHeight = screen.height;
    
@@ -8,6 +9,12 @@ var windowHeight = screen.height;
         	window.location = "location.html";
         })
 		
+
+
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+		alert("device ready");
+
     }
 	
 	function updateDisplay() {
