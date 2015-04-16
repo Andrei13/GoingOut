@@ -5,9 +5,7 @@ var windowHeight = screen.height;
 
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
-        $("#searchButton").click(function(){
-        	window.location = "location.html";
-        })
+}
 		
 
 

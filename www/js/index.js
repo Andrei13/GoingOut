@@ -1,9 +1,5 @@
 setTimeout(function(){
-       window.location='MainPage.html';
-<<<<<<< HEAD
-        
+       window.location='MainPage.html';        
     }, 20000);
-=======
 
-    }, 2000);
->>>>>>> parent of c7bada3... screensize2
+
