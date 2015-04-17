@@ -1,8 +1,12 @@
+
+
 //when the jQuery Mobile page is initialised
 function onLoad() {
 	
 	//set up listener for button click
 	$('#getLocationButton').on('click', getPosition);
+
+	$('#ShowMap').on('click',showMap);
 	
 	//change time box to show message
 	$('#time').val("Press the button to get location data");
@@ -20,6 +24,11 @@ function getPosition() {
 
 }
 
+function showMap()
+{
+    window.location="ShowMap.html";
+}
+
 
 //called when the position is successfully determined
 function successPosition(position) {
@@ -31,7 +40,7 @@ function successPosition(position) {
 	//lets get some stuff out of the position object
 	var time = position.timestamp;
 	var latitude = position.coords.latitude;
-	
+	window.localStorage.setItem("position",  JSON.stringify(position));
 	//OK. Now we want to update the display with the correct values
 	$('#time').val("Recieved data at " + time);
 	$('#lattext').val(latitude);
