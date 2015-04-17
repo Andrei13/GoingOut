@@ -5,6 +5,7 @@ var windowHeight = screen.height;
 
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
+<<<<<<< HEAD
 }
 		
 
@@ -13,12 +14,21 @@ var windowHeight = screen.height;
         document.addEventListener("deviceready", onDeviceReady, false);
 		alert("device ready");
 
+=======
+		alert("device ready");
+		alert(windowHeight);
+		alert(windowWidth);
+>>>>>>> parent of 62a4f8a... position
     }
 	
 	function updateDisplay() {
 	
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 62a4f8a... position
     // device APIs are available
     //
     function onDeviceReady() {
