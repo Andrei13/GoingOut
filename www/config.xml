@@ -24,6 +24,7 @@
     <preference name="orientation"                value="portrait" /> 
 	
 	<access origin="*"/>
+
     <platform name="android">
 
        <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
