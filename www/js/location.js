@@ -2,7 +2,7 @@
 function onLoad() {
 	
 	//set up listener for button click
-	$(document).on('click', getPosition);
+	$('#getLocationButton').on('click', getPosition);
 	
 	//change time box to show message
 	$('#time').val("Press the button to get location data");
