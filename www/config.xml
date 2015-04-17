@@ -25,12 +25,15 @@
 
     <feature name="SplashScreen">
           <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
-    </feature>
 
-    <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
-    <gap:splash src="res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
-    <gap:splash src="res/screen/android/screen-hdpi-portrait.png"       gap:platform="android" gap:qualifier="port-hdpi" />
-    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
+    <platform name="android">
+
+       <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
+       <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
+       <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
+       <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
+</platform>
+    <preference name="SplashScreenDelay" value="10000" />
 	
 	<access origin="*"/>
 </widget>
