@@ -1,4 +1,4 @@
-boolean hasData=false;
+var hasData=false;
 
 //when the jQuery Mobile page is initialised
 function onLoad() {
