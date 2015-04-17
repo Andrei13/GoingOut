@@ -5,18 +5,21 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
-<gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />       
+
+    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />    
+   
     <name>GoingOut</name>
 
+
     <description>
-        A sample application that counts the occurances of lifecycle events.
+        The dream application for youngsters
     </description>
 
     <author href="worcester.ac.uk" email="c.bowers@worc.ac.uk">
         WBS Computing
     </author>
 
-    <preference name="permissions"                value="none"/>   
+    <feature name="http://api.phonegap.com/1.0/geolocation"/> 
 	
 	<access origin="*"/>
 </widget>
