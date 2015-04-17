@@ -1,5 +1,5 @@
 setTimeout(function(){
        window.location='MainPage.html';        
-    }, 20000);
+    }, 2000);
 
 
