@@ -22,18 +22,6 @@
     <feature name="http://api.phonegap.com/1.0/geolocation"/> 
 
     <preference name="orientation"                value="portrait" /> 
-
-    <feature name="SplashScreen">
-          <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
-
-    <platform name="android">
-
-       <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
-       <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
-       <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
-       <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
-</platform>
-    <preference name="SplashScreenDelay" value="10000" />
 	
 	<access origin="*"/>
 </widget>
