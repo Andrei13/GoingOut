@@ -1,4 +1,4 @@
-
+boolean hasData=false;
 
 //when the jQuery Mobile page is initialised
 function onLoad() {
@@ -26,7 +26,7 @@ function getPosition() {
 
 function showMap()
 {
-    window.location="ShowMap.html";
+    if(hasData==true) window.location="ShowMap.html";
 }
 
 
@@ -41,6 +41,7 @@ function successPosition(position) {
 	var time = position.timestamp;
 	var latitude = position.coords.latitude;
 	window.localStorage.setItem("position",  JSON.stringify(position));
+	hasData = true;
 	//OK. Now we want to update the display with the correct values
 	$('#time').val("Recieved data at " + time);
 	$('#lattext').val(latitude);
