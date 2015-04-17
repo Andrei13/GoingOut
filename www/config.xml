@@ -23,6 +23,10 @@
 
     <preference name="orientation"                value="portrait" /> 
 
+    <feature name="SplashScreen">
+          <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+
     <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
     <gap:splash src="res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
     <gap:splash src="res/screen/android/screen-hdpi-portrait.png"       gap:platform="android" gap:qualifier="port-hdpi" />
