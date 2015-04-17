@@ -1,5 +1,5 @@
 //when the jQuery Mobile page is initialised
-$(document).on('pageinit', function() {
+function onLoad() {
 	
 	//set up listener for button click
 	$(document).on('click', getPosition);
@@ -7,8 +7,7 @@ $(document).on('pageinit', function() {
 	//change time box to show message
 	$('#time').val("Press the button to get location data");
 	
-});
-
+}
 
 //Call this function when you want to get the current position
 function getPosition() {
