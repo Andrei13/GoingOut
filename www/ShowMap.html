@@ -13,7 +13,11 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
+	<!-- References:
+	<!-- Google Maps API v3
+	<!-- Examples code : https://developers.google.com/maps/documentation/javascript/examples/
 var map;
+var service;
 function initialize() {
   var pos = JSON.parse(localStorage.getItem("position"));
   var lat = pos.coords.latitude;
@@ -28,6 +32,24 @@ function initialize() {
   position: new google.maps.LatLng(lat, lon),
   map: map,
   title: 'your location'});
+
+  var request = {
+    location: pyrmont,
+    radius: '500',
+    query: 'restaurant'
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.textSearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      var place = results[i];
+      createMarker(results[i]);
+    }
+  }
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
