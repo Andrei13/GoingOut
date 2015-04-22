@@ -22,6 +22,7 @@ function initialize() {
   var pos = JSON.parse(localStorage.getItem("position"));
   var lat = pos.coords.latitude;
   var lon = pos.coords.longitude;
+  var myPos= new google.maps.LatLng(lat, lon);
   var mapOptions = {
     zoom: 12,
     center: new google.maps.LatLng(lat, lon)
@@ -29,12 +30,12 @@ function initialize() {
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
   var marker = new google.maps.Marker({
-  position: new google.maps.LatLng(lat, lon),
+  position: myPos,
   map: map,
   title: 'your location'});
 
   var request = {
-    location: pyrmont,
+    location: myPos,
     radius: '500',
     query: 'restaurant'
   };
