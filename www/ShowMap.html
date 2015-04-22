@@ -14,6 +14,7 @@
       }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script>
 	<!-- References:
 	<!-- Google Maps API v3
@@ -51,7 +52,7 @@ function callback(results, status) {
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
       marker = new google.maps.Marker({
-  position: results[i].location,
+  position: results[i].geometry.location,
   map: map,
   title: 'your location'});
     }
