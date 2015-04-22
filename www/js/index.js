@@ -4,7 +4,7 @@ setTimeout(function(){
     }, 2000);
 
 function onLoad(){
-	navigator.splashscreen.show();
+	//navigator.splashscreen.show();
 	 }
 
 

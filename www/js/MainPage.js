@@ -10,10 +10,6 @@ var windowHeight = screen.height;
             window.location = 'location.html';
             
         });
-       
-        alert("device ready");
-        alert(windowHeight);
-        alert(windowWidth);
 
 }
 
