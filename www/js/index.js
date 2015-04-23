@@ -1,10 +1,9 @@
 setTimeout(function(){
-       window.location='MainPage.html';
-              
+       window.location='MainPage.html';             
     }, 2000);
 
 function onLoad(){
-	//navigator.splashscreen.show();
+	cordova.exec(null, null, "SplashScreen", "show", []);
 	 }
 
 
