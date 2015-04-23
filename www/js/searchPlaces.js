@@ -58,7 +58,7 @@ function callback(results, status) {
      service.getDetails(request,function(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         var name=place.name;
-        $('#PlacesList').append('<li><h1>'+name+'</h1><a>'+place.place_id'+</a></li>').listview('refresh');
+        $('#PlacesList').append('<li><h1>'+name+'</h1><a>'+place.place_id+'</a></li>').listview('refresh');
         
       }
 });
