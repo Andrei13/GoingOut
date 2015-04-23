@@ -40,11 +40,11 @@ function initialize() {
   var request = {
     location: myPos,
     radius: '500',
-    query: 'restaurant'
+    types: ['restaurant','bar']
   };
 
  var service = new google.maps.places.PlacesService(map);
-  service.textSearch(request, callback);
+  service.nearbySearch(request, callback);
 }
 
 function callback(results, status) {
