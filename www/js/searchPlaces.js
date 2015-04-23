@@ -5,7 +5,7 @@ var map;
 function initialize() {
     //get the current position of the device
     navigator.geolocation.getCurrentPosition(search, failPosition,{timeout:10000});
-document.addEventListener("backbutton", onBackKeyDown, false);   
+    document.addEventListener("backbutton", onBackKeyDown, false);   
 }
 
 
@@ -54,7 +54,7 @@ function callback(results, status) {
       placeId: results[i].id
      };
      var service = new google.maps.places.PlacesService(map);
-     service.getDetails(request,callbackDetails(details,status));
+     service.getDetails(request,callbackDetails);
     }
   }
 }
