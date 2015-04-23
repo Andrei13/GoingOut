@@ -63,7 +63,7 @@ function callback(results, status) {
       }
 });
    }
-   $('#PlacesList').data("role") = "listview";
+   $('#PlacesList').data("role", "listview");
   }
 }
     
