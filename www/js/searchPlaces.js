@@ -51,7 +51,7 @@ function callback(results, status) {
       title: 'your location'});
 */
      var request = {
-      placeId: results[i].id
+      placeId: results[i].place_id
      };
      var service = new google.maps.places.PlacesService(map);
      service.getDetails(request,callbackDetails);
