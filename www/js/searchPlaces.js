@@ -43,13 +43,27 @@ function search(position) {
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
+      /*
       var place = results[i];
       marker = new google.maps.Marker({
-  position: results[i].geometry.location,
-  map: map,
-  title: 'your location'});
+      position: results[i].geometry.location,
+      map: map,
+      title: 'your location'});
+*/
+     var request = {
+      placeId: results[i].id
+     };
+     var service = new google.maps.places.PlacesService(map);
+     service.getDetails(request,callbackDetails);
     }
   }
+}
+
+function callbackDetails(place,status){
+   if (status== google.maps.places.PlacesServiceStatus.OK) {
+        var name=place.name;
+        $('#PlacesList ul').append('<li><h1>'+name+'</h1>');
+      }
 }
 
 function onBackKeyDown() {
