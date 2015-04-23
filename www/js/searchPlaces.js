@@ -63,6 +63,7 @@ function callback(results, status) {
       }
 });
    }
+   $('#PlacesList ul').data("role") = "listview";
   }
 }
     
