@@ -5,13 +5,13 @@ var map;
 function initialize() {
     //get the current position of the device
     navigator.geolocation.getCurrentPosition(search, failPosition,{timeout:10000});
+    document.addEventListener("backbutton", onBackKeyDown, false);
 }
 
 
 //called if the position is not obtained correctly
 function failPosition(error) {
-  //change time box to show updated message
-  $('#time').val("Error getting data: " + error);
+  alert("Your position is not available, please check your settings");
   
 }
 
@@ -52,5 +52,8 @@ function callback(results, status) {
   }
 }
 
+function onBackKeyDown() {
+       window.location='mainPage.html';
+}
 
 google.maps.event.addDomListener(window, 'load', initialize);
