@@ -58,12 +58,12 @@ function callback(results, status) {
      service.getDetails(request,function(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         var name=place.name;
-        $('#PlacesList').append('<li data-role="listview"><h1>'+name+'</h1>');
+        $('#PlacesList').append('<li data-role="list-divider"><h1>'+name+'</h1>');
         
       }
 });
    }
-   $('#PlacesList').data("role", "listview");
+  // $('#PlacesList').data("role", "listview");
   }
 }
     
