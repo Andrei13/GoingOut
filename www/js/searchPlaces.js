@@ -49,10 +49,14 @@ function callback(results, status) {
       position: results[i].geometry.location,
       map: map,
       title: 'your location'});
-*/
+
      var request = {
       placeId: results[i].place_id
      };
+     */
+     var request = {
+    placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
+  };
      var service = new google.maps.places.PlacesService(map);
      service.getDetails(request,function(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
