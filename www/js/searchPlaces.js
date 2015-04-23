@@ -54,7 +54,7 @@ function callback(results, status) {
       placeId: results[i].place_id
      };
      var service = new google.maps.places.PlacesService(map);
-     service.getDetails(request,callbackDetails(place,status){
+     service.getDetails(request,function(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         var name=place.name;
         $('#PlacesList ul').append('<li><h1>'+name+'</h1>');
