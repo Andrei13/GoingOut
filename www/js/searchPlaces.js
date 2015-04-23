@@ -54,7 +54,7 @@ function callback(results, status) {
       placeId: results[i].id
      };
      var service = new google.maps.places.PlacesService(map);
-     service.getDetails(request,callbackDetails);
+     service.getDetails(request,callbackDetails(details,status));
     }
   }
 }
