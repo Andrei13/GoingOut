@@ -38,6 +38,10 @@ function search(position) {
 
  var service = new google.maps.places.PlacesService(map);
   service.radarSearch(request, callback);
+  $('li').click(function()
+        {
+          alert("clicked");
+        })
 }
 
 function callback(results, status) {
@@ -63,10 +67,7 @@ function callback(results, status) {
 });
    }
   }
-  $('li').click(function()
-        {
-          alert("clicked");
-        })
+
       }
 }
     
