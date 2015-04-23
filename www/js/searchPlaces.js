@@ -32,7 +32,7 @@ function search(position) {
 
   var request = {
     location: myPos,
-    radius: '500',
+    radius: '1000',
     types: ['restaurant','bar']
   };
 
@@ -59,7 +59,7 @@ function callback(results, status) {
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         var name=place.name;
         $('#PlacesList ul').append('<li><h1>'+name+'</h1>');
-        alert("asa");
+        
       }
 });
    }
