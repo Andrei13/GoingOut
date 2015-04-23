@@ -1,30 +1,23 @@
-<!DOCTYPE html>
-<html>
+//Examples code : https://developers.google.com/maps/documentation/javascript/examples/
 
-  <head>
-  
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-    <script>
-	<!-- References:
-	<!-- Google Maps API v3
-	<!-- Examples code : https://developers.google.com/maps/documentation/javascript/examples/
 var map;
 
 function initialize() {
-  var pos = JSON.parse(localStorage.getItem("position"));
-  var lat = pos.coords.latitude;
-  var lon = pos.coords.longitude;
+    //get the current position of the device
+    navigator.geolocation.getCurrentPosition(search, failPosition,{timeout:10000});
+}
+
+
+//called if the position is not obtained correctly
+function failPosition(error) {
+  //change time box to show updated message
+  $('#time').val("Error getting data: " + error);
+  
+}
+
+function search(position) {
+  var lat = position.coords.latitude;
+  var lon = position.coords.longitude;
   var myPos= new google.maps.LatLng(lat, lon);
   var mapOptions = {
     zoom: 12,
@@ -61,10 +54,3 @@ function callback(results, status) {
 
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-  </body>
-</html>

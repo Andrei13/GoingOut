@@ -1,5 +1,5 @@
 setTimeout(function(){
-       window.location='MainPage.html';             
+       window.location='mainPage.html';             
     }, 2000);
 
 function onLoad(){
