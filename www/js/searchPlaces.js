@@ -77,15 +77,16 @@ function callback(results, status) {
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         var name=place.name;
         $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+name+'</h1></li>').listview('refresh');
+        $('li').click(function()
+        {
+          alert("clicked");
+        }) 
    }
   })
 
       }
 }
-$('li').click(function()
-        {
-          alert("clicked");
-        })  
+
 }
     
 
