@@ -12,7 +12,7 @@ var windowHeight = screen.height;
             window.localStorage.setItem(key, value);
 
             key="types";
-            value=null;
+            value=new Array();
             if($('#food').is(":checked"))
             {
                 value.push('restaurant');
