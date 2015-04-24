@@ -31,10 +31,24 @@ function search(position) {
   map: map,
   title: 'your location'});
 
+   var Types=new Array();
+   var ty = window.localStorage.getItem("types");
+   if(ty[0]!='0')
+   {
+    Types.push('restaurant');
+   }
+   if(ty[1]!='0')
+   {
+    Types.push('bar');
+   }
+   if(ty[2]!=0)
+   {
+    Types.push('night_club');
+   }
   var request = {
     location: myPos,
     radius: String(window.localStorage.getItem("distance")),
-    types: window.localStorage.getItem("types")
+    types: Types
 
   };
 
