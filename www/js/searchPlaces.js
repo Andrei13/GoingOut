@@ -5,7 +5,11 @@ var map;
 function initialize() {
     //get the current position of the device
     navigator.geolocation.getCurrentPosition(search, failPosition,{timeout:10000});
-    document.addEventListener("backbutton", onBackKeyDown, false);   
+    document.addEventListener("backbutton", onBackKeyDown, false); 
+    $('li').click(function()
+        {
+          alert("clicked");
+        })  
 }
 
 
@@ -40,7 +44,6 @@ function search(position) {
    if(ty[1]!='0')
    {
     Types.push('bar');
-    Types.push('wine_bar')
    }
    if(ty[2]!=0)
    {
@@ -55,10 +58,7 @@ function search(position) {
 
   var service = new google.maps.places.PlacesService(map);
   service.radarSearch(request, callback);
-  $('li').click(function()
-        {
-          alert("clicked");
-        })
+  
 }
 
 function callback(results, status) {
