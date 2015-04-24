@@ -33,7 +33,7 @@ function search(position) {
   var request = {
     location: myPos,
     radius: String(window.localStorage.getItem("distance")),
-    types: windows.localStorage.getItem("types")
+    types: window.localStorage.getItem("types")
   };
 
  var service = new google.maps.places.PlacesService(map);
