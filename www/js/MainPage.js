@@ -7,7 +7,27 @@ var windowHeight = screen.height;
         document.addEventListener("deviceready", onDeviceReady, false);
          $("#searchButton").click(function(e)
          {
+            var key = "distance";
+            var value = $( "#Distance" ).val();
+            window.localStorage.setItem(key, value);
+
+            key="types";
+            value=null;
+            if($('#food').is(":checked"))
+            {
+                key.push('restaurant');
+            }
+            if ($('#drink').is(":checked"))
+              {
+                key.push('bar');
+              }
+            if ($('#dance').is(":checked"))
+                {
+                    key.push('night_club');   
+                }
+            window.localStorage.setItem(key,value);
             window.location = 'showPlaces.html';
+
             
         });
 
