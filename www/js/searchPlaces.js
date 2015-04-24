@@ -6,10 +6,7 @@ function initialize() {
     //get the current position of the device
     navigator.geolocation.getCurrentPosition(search, failPosition,{timeout:10000});
     document.addEventListener("backbutton", onBackKeyDown, false); 
-    $('li').click(function()
-        {
-          alert("clicked");
-        })  
+
 }
 
 
@@ -85,6 +82,10 @@ function callback(results, status) {
 
       }
 }
+$('li').click(function()
+        {
+          alert("clicked");
+        })  
 }
     
 
