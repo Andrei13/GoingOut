@@ -12,19 +12,31 @@ var windowHeight = screen.height;
             window.localStorage.setItem(key, value);
 
             key="types";
-            value=new Array();
+            value="";
             if($('#food').is(":checked"))
             {
-                value.push('restaurant');
+                value+='1';
             }
+              else
+              {
+                value+='0';
+              }
             if ($('#drink').is(":checked"))
               {
-                value.push('bar');
+                value+='1';
+            }
+              else
+              {
+                value+='0';
               }
             if ($('#dance').is(":checked"))
                 {
-                    value.push('night_club');   
-                }
+                value+='1';
+            }
+              else
+              {
+                value+='0';
+              }
             window.localStorage.setItem(key,value);
             window.location = 'showPlaces.html';
 

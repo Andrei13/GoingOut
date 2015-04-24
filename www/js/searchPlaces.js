@@ -34,8 +34,8 @@ function search(position) {
   var request = {
     location: myPos,
     radius: String(window.localStorage.getItem("distance")),
-    //types: window.localStorage.getItem("types")
-    types: ['restaurant']
+    types: window.localStorage.getItem("types")
+
   };
 
   var service = new google.maps.places.PlacesService(map);
