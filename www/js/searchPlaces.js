@@ -40,6 +40,7 @@ function search(position) {
    if(ty[1]!='0')
    {
     Types.push('bar');
+    Types.push('wine_bar')
    }
    if(ty[2]!=0)
    {
