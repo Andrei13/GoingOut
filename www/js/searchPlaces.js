@@ -25,6 +25,7 @@ function search(position) {
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
+
   var marker = new google.maps.Marker({
   position: myPos,
   map: map,
@@ -36,7 +37,7 @@ function search(position) {
     types: window.localStorage.getItem("types")
   };
 
- var service = new google.maps.places.PlacesService(map);
+  var service = new google.maps.places.PlacesService(map);
   service.radarSearch(request, callback);
   $('li').click(function()
         {
