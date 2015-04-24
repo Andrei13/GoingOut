@@ -32,8 +32,8 @@ function search(position) {
 
   var request = {
     location: myPos,
-    radius: '1000',
-    types: ['restaurant','bar']
+    radius: String(window.localStorage.getItem("distance")),
+    types: windows.localStorage.getItem("types")
   };
 
  var service = new google.maps.places.PlacesService(map);
@@ -70,9 +70,6 @@ function callback(results, status) {
 }
 }
     
-  
-
-
 
 function onBackKeyDown() {
        window.location='mainPage.html';

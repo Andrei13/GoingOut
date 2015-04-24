@@ -15,15 +15,15 @@ var windowHeight = screen.height;
             value=null;
             if($('#food').is(":checked"))
             {
-                key.push('restaurant');
+                value.push('restaurant');
             }
             if ($('#drink').is(":checked"))
               {
-                key.push('bar');
+                value.push('bar');
               }
             if ($('#dance').is(":checked"))
                 {
-                    key.push('night_club');   
+                    value.push('night_club');   
                 }
             window.localStorage.setItem(key,value);
             window.location = 'showPlaces.html';
