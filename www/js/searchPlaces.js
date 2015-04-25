@@ -83,15 +83,14 @@ function getPlacesDetails(places)
 {
   for (var i = 0, place; place = places[i];i++) {
     var request = {
-      placeId: results[i].place_id
+      placeId: places[i].place_id
      };
 
      var service = new google.maps.places.PlacesService(map);
      service.getDetails(request,placesCallBack);
 
-     var place = results[i];
       marker = new google.maps.Marker({
-      position: results[i].geometry.location,
+      position: places[i].geometry.location,
       map: map,
       title: 'your location'});
       }
