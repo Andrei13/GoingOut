@@ -58,7 +58,7 @@ function callback(results, status, pagination) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
 
     getPlacesDetails(results); 
-/*
+
     if (pagination.hasNextPage) {
       sleep:2;
        pagination.nextPage();
@@ -70,7 +70,7 @@ function callback(results, status, pagination) {
           alert("clicked");
         })
   }
-  */
+  
   
 }
 }
