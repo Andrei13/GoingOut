@@ -105,10 +105,7 @@ function placesCallBack(place,status){
         $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+place.name+'</h1></li>').listview('refresh');
         console.log(place.place_id);
       }
-      else
-      {
-        if(status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)       
-    }
+      
   }
     
 
