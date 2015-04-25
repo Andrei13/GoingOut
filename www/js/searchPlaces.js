@@ -60,6 +60,7 @@ function search(position) {
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
+    var eventAttached=false;
     for (var i = 0; i < results.length; i++) {
       
       var place = results[i];
@@ -77,12 +78,16 @@ function callback(results, status) {
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         var name=place.name;
         $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+name+'</h1></li>').listview('refresh');
-        $('li').click(function()
+        if(!eventAttached){
+         $('li').click(function()
         {
           alert("clicked");
-        }) 
+        });
+         eventAttached=true;      
    }
+ }
   })
+
 
       }
 }
