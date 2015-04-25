@@ -87,7 +87,9 @@ function getPlacesDetails(places)
      };
 
      var service = new google.maps.places.PlacesService(map);
-     service.getDetails(request,placesCallBack);
+     setTimeout(
+      service.getDetails(request,placesCallBack)    
+     ,100);
       /*
       marker = new google.maps.Marker({
       position: places[i].geometry.location,
@@ -96,6 +98,8 @@ function getPlacesDetails(places)
       console.log("created marker");
       }
       */
+}
+
 }
 function placesCallBack(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
