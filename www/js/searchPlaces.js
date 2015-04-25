@@ -111,10 +111,12 @@ function placesCallBack(place,status){
 
      var service = new google.maps.places.PlacesService(map);
       console.log("delay");
+      /*
       setTimeout(function()
         {service.getDetails(request,placesCallBack); 
         },150);
-        }
+        }*/
+        service.getDetails(request,placesCallBack); 
       }
   }
     
