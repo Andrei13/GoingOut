@@ -97,7 +97,18 @@ function getPlacesDetails(places)
 
 function placesCallBack(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
-        $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+place.name+' ('+place.rating+') '+'</h1></li>').listview('refresh');
+        var rating;
+        if(place.rating!=null)
+        {
+          rating = ' ('+place.rating+'/5)';
+        }
+        else
+        {
+          rating = ' (rating not available)';
+        }
+        $('#PlacesList').append('<li data="'+place.place_id+'"><p>'+
+                                             place.name+rating+'</p><p>'+
+                                             place.types+'</p</li>').listview('refresh');
         console.log(place.place_id);
       }
       
