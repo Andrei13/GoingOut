@@ -93,12 +93,14 @@ function getPlacesDetails(places)
       position: places[i].geometry.location,
       map: map,
       title: 'your location'});
+      alert("created marker")
       }
 }
 function placesCallBack(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         var name=place.name;
         $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+name+'</h1></li>').listview('refresh');
+        console.log(place.place_id);
  }
   }
     
