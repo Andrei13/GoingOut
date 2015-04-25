@@ -58,7 +58,7 @@ function callback(results, status, pagination) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
 
     getPlacesDetails(results); 
-
+/*
     if (pagination.hasNextPage) {
       sleep:2;
        pagination.nextPage();
@@ -70,7 +70,7 @@ function callback(results, status, pagination) {
           alert("clicked");
         })
   }
-  
+  */
   
 }
 }
@@ -85,10 +85,6 @@ function getPlacesDetails(places)
      var service = new google.maps.places.PlacesService(map);
   
       service.getDetails(request,placesCallBack); 
-      if(i%10==0)
-      {
-        sleep:2;
-      } 
     /*
       marker = new google.maps.Marker({
       position: places[i].geometry.location,
