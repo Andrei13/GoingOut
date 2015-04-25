@@ -75,8 +75,7 @@ function callback(results, status, pagination) {
      var service = new google.maps.places.PlacesService(map);
      service.getDetails(request,placesCallBack);
       }
-  }
-  if (pagination.hasNextPage) {
+      if (pagination.hasNextPage) {
     sleep:2;
     pagination.nextPage();
 }
@@ -87,6 +86,8 @@ function callback(results, status, pagination) {
           alert("clicked");
         })
   }
+  }
+  
 
 }
 
