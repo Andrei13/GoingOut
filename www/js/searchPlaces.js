@@ -85,7 +85,7 @@ function getPlacesDetails(places)
      var service = new google.maps.places.PlacesService(map);
   
       service.getDetails(request,placesCallBack); 
-      if(i%20==0)
+      if(i%10==0)
       {
         sleep:2;
       } 
