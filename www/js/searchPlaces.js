@@ -27,11 +27,6 @@ function search(position) {
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
-  var marker = new google.maps.Marker({
-  position: myPos,
-  map: map,
-  title: 'your location'});
-
    var Types=new Array();
    var ty = window.localStorage.getItem("types");
    if(ty[0]!='0')
@@ -105,17 +100,11 @@ function placesCallBack(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+place.name+'</h1></li>').listview('refresh');
         console.log(place.place_id);
-      }/*
+      }
       else
       {
-        if(status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
-        {
-          setTimeout(function()
-          {
-            placesCallBack(place,status);
-          },100);
-        }
-      }*/
+        console.log(status);
+      }
   }
     
 
