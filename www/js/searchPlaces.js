@@ -1,6 +1,7 @@
 //Examples code : https://developers.google.com/maps/documentation/javascript/examples/
 
 var map;
+var nextPlace;
 
 function initialize() {
     //get the current position of the device
@@ -80,7 +81,7 @@ function getPlacesDetails(places)
     var request = {
       placeId: places[i].place_id
      };
-
+     nextPlace=places[i].place_id;
      var service = new google.maps.places.PlacesService(map);
   
       service.getDetails(request,placesCallBack);  
@@ -105,11 +106,11 @@ function placesCallBack(place,status){
         if(status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
         {
            var request = {
-           placeId: place.place_id
+           placeId: nextPlace
             };
 
      var service = new google.maps.places.PlacesService(map);
-  
+      console.log("delay");
       setTimeout(function()
         {service.getDetails(request,placesCallBack); 
         },150);
