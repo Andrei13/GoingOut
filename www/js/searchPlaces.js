@@ -58,9 +58,8 @@ function search(position) {
   
 }
 
-function callback(results, status) {
+function callback(results, status, pagination) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-    var eventAttached=false;
     for (var i = 0; i < results.length; i++) {
       
       var place = results[i];
@@ -74,30 +73,34 @@ function callback(results, status) {
      };
 
      var service = new google.maps.places.PlacesService(map);
-     service.getDetails(request,function(place,status){
+     service.getDetails(request,placesCallBack);
+      }
+  }
+  if (pagination.hasNextPage) {
+    sleep:2;
+    pagination.nextPage();
+}
+  else
+  {
+     $('li').click(function()
+        {
+          alert("clicked");
+        })
+  }
+
+}
+
+function placesCallBack(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         var name=place.name;
         $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+name+'</h1></li>').listview('refresh');
-        if(!eventAttached){
-         $('li').click(function()
-        {
-          alert("clicked");
-        });
-         eventAttached=true;      
-   }
+
  }
-  })
-
-
-      }
-}
-
-}
+  }
     
 
 function onBackKeyDown() {
-       window.location='mainPage.html';
-       alert("aa");
+       window.location='MainPage.html';
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
