@@ -118,6 +118,7 @@ function placesCallBack(place,status){
         }*/
         service.getDetails(request,placesCallBack); 
       }
+    }
   }
     
 
