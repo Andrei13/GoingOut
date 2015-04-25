@@ -89,7 +89,7 @@ function getPlacesDetails(places)
      var service = new google.maps.places.PlacesService(map);
      setTimeout(
       service.getDetails(request,placesCallBack)    
-     ,100);
+     ,1000);
       /*
       marker = new google.maps.Marker({
       position: places[i].geometry.location,
