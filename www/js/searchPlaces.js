@@ -2,7 +2,6 @@
 
 var map;
 var nextPlace;
-var service
 
 function initialize() {
     //get the current position of the device
@@ -50,7 +49,7 @@ function search(position) {
 
   };
 
-  service = new google.maps.places.PlacesService(map);
+  var service = new google.maps.places.PlacesService(map);
   service.radarSearch(request, callback);
   
 }
@@ -83,6 +82,7 @@ function getPlacesDetails(places)
       placeId: places[i].place_id
      };
      nextPlace=places[i].place_id;
+     var service = new google.maps.places.PlacesService(map);
   
       service.getDetails(request,placesCallBack); 
     /*
