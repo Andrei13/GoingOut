@@ -107,7 +107,7 @@ function placesCallBack(place,status){
           rating = ' (rating not available)';
         }
         var myTypes=place.types;
-        myTypes[myTypes.legth-1]="";
+        myTypes[myTypes.length-1]="";
         $('#PlacesList').append('<li data="'+place.place_id+'"><h2>'+
                                              place.name+rating+'</h2><p>'+
                                              myTypes+'</p</li>').listview('refresh');
