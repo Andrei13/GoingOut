@@ -84,7 +84,11 @@ function getPlacesDetails(places)
      nextPlace=places[i].place_id;
      var service = new google.maps.places.PlacesService(map);
   
-      service.getDetails(request,placesCallBack);  
+      service.getDetails(request,placesCallBack); 
+      if(i%20==0)
+      {
+        sleep:2;
+      } 
     /*
       marker = new google.maps.Marker({
       position: places[i].geometry.location,
@@ -103,21 +107,7 @@ function placesCallBack(place,status){
       }
       else
       {
-        if(status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
-        {
-           var request = {
-           placeId: nextPlace
-            };
-
-     var service = new google.maps.places.PlacesService(map);
-      console.log("delay");
-      /*
-      setTimeout(function()
-        {service.getDetails(request,placesCallBack); 
-        },150);
-        }*/
-        service.getDetails(request,placesCallBack); 
-      }
+        if(status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)       
     }
   }
     
