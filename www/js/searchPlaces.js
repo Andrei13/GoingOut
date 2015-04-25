@@ -65,8 +65,8 @@ function callback(results, status, pagination) {
 
     if (pagination.hasNextPage) {
       sleep:2;
-      pagination.nextPage();
-    }
+       pagination.nextPage();
+}
   else
   {
      $('li').click(function()
@@ -98,10 +98,19 @@ function getPlacesDetails(places)
 }
 function placesCallBack(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
-        var name=place.name;
-        $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+name+'</h1></li>').listview('refresh');
+        $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+place.name+'</h1></li>').listview('refresh');
         console.log(place.place_id);
- }
+      }
+      else
+      {
+        if(status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
+        {
+          setTimeout(function()
+          {
+            placesCallBack(place,status);
+          },100);
+        }
+      }
   }
     
 
