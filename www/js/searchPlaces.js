@@ -85,20 +85,20 @@ function getPlacesDetails(places)
      var service = new google.maps.places.PlacesService(map);
   
       service.getDetails(request,placesCallBack); 
-    /*
+    
       marker = new google.maps.Marker({
       position: places[i].geometry.location,
       map: map,
       title: 'your location'});
       console.log("created marker");
       }
-      */
+      
 }
 
 }
 function placesCallBack(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
-        $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+place.name+'</h1></li>').listview('refresh');
+        $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+place.name+' ('+place.rating+') '+'</h1></li>').listview('refresh');
         console.log(place.place_id);
       }
       
