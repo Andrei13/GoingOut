@@ -60,25 +60,13 @@ function search(position) {
 
 function callback(results, status, pagination) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      
-      var place = results[i];
-      marker = new google.maps.Marker({
-      position: results[i].geometry.location,
-      map: map,
-      title: 'your location'});
 
-     var request = {
-      placeId: results[i].place_id
-     };
+    getPlacesDetails(results); 
 
-     var service = new google.maps.places.PlacesService(map);
-     service.getDetails(request,placesCallBack);
-      }
-      if (pagination.hasNextPage) {
-    sleep:2;
-    pagination.nextPage();
-}
+    if (pagination.hasNextPage) {
+      sleep:2;
+      pagination.nextPage();
+    }
   else
   {
      $('li').click(function()
@@ -86,16 +74,32 @@ function callback(results, status, pagination) {
           alert("clicked");
         })
   }
-  }
   
-
+  
+}
 }
 
+function getPlacesDetails(places)
+{
+  for (var i = 0, place; place = places[i];i++) {
+    var request = {
+      placeId: results[i].place_id
+     };
+
+     var service = new google.maps.places.PlacesService(map);
+     service.getDetails(request,placesCallBack);
+
+     var place = results[i];
+      marker = new google.maps.Marker({
+      position: results[i].geometry.location,
+      map: map,
+      title: 'your location'});
+      }
+}
 function placesCallBack(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         var name=place.name;
         $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+name+'</h1></li>').listview('refresh');
-
  }
   }
     
