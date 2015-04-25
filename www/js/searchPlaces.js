@@ -82,9 +82,9 @@ function getPlacesDetails(places)
      };
 
      var service = new google.maps.places.PlacesService(map);
-     setTimeout(
-      service.getDetails(request,placesCallBack)    
-     ,1000);
+     setTimeout(function(){
+      service.getDetails(request,placesCallBack)}    
+     ,200);
       /*
       marker = new google.maps.Marker({
       position: places[i].geometry.location,
