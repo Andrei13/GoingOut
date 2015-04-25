@@ -93,6 +93,7 @@ function getPlacesDetails(places)
       position: places[i].geometry.location,
       map: map,
       title: 'your location'});
+      console.log("created marker");
       }
 }
 function placesCallBack(place,status){
