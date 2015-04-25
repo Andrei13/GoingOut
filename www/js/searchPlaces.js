@@ -106,10 +106,11 @@ function placesCallBack(place,status){
         {
           rating = ' (rating not available)';
         }
-        delete place.types[place.types.legth-1];
+        var myTypes=place.types;
+        delete myTypes[myTypes.legth-1];
         $('#PlacesList').append('<li data="'+place.place_id+'"><h2>'+
                                              place.name+rating+'</h2><p>'+
-                                             place.types+'</p</li>').listview('refresh');
+                                             myTypes+'</p</li>').listview('refresh');
         console.log(place.place_id);
       }
       
