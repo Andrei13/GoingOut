@@ -95,7 +95,6 @@ function getPlacesDetails(places)
       
 }
 
-}
 function placesCallBack(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+place.name+' ('+place.rating+') '+'</h1></li>').listview('refresh');
