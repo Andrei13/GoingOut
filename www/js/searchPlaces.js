@@ -82,10 +82,9 @@ function getPlacesDetails(places)
      };
 
      var service = new google.maps.places.PlacesService(map);
-     setTimeout(function(){
-      service.getDetails(request,placesCallBack)}    
-     ,200);
-      /*
+  
+      service.getDetails(request,placesCallBack);  
+    /*
       marker = new google.maps.Marker({
       position: places[i].geometry.location,
       map: map,
@@ -103,7 +102,18 @@ function placesCallBack(place,status){
       }
       else
       {
-        console.log(status);
+        if(status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
+        {
+           var request = {
+           placeId: place.place_id
+            };
+
+     var service = new google.maps.places.PlacesService(map);
+  
+      setTimeout(function()
+        {service.getDetails(request,placesCallBack); 
+        },150);
+        }
       }
   }
     
