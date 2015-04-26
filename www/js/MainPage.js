@@ -5,9 +5,26 @@ var windowHeight = screen.height;
 
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
+        $('#favButton').click(function()
+          {
+            window.location="Favourites.html";
+          });
+        $('#hisButton').click(function()
+          {
+            window.location="History.html";
+          });
+
          $("#searchButton").click(function(e)
          {
-            var key = "distance";
+            saveState();
+            window.location = 'showPlaces.html';     
+        });
+
+}
+    
+    function saveState()
+    {
+      var key = "distance";
             var value = $( "#Distance" ).val();
             window.localStorage.setItem(key, value);
 
@@ -38,12 +55,7 @@ var windowHeight = screen.height;
                 value+='0';
               }
             window.localStorage.setItem(key,value);
-            window.location = 'showPlaces.html';
-
-            
-        });
-
-}
+    }
 
 
     // device APIs are available
