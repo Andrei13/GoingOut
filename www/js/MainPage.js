@@ -25,9 +25,9 @@
       var state = {
           "distance": $( "#Distance" ).val(),
           "types":{
-                   "food": $('#food').is(":checked"),
-                   "drink": $('#drink').is(":checked"),
-                   "dance": $('#drink').is(":checked"),
+                   "restaurant": $('#food').is(":checked"),
+                   "bar": $('#drink').is(":checked"),
+                   "night_club": $('#dance').is(":checked"),
                  },
           "openNow": $('#openNowCheckbox').is(":checked")
         }   
