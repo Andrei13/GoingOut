@@ -1,13 +1,13 @@
 //Examples code : https://developers.google.com/maps/documentation/javascript/examples/
 
 var map;
-var nextPlace;
+var state;
 
 function initialize() {
     //get the current position of the device
     navigator.geolocation.getCurrentPosition(search, failPosition,{timeout:10000});
     document.addEventListener("backbutton", onBackKeyDown, false); 
-
+    state = window.sessionStorage.getItem("state");
 }
 
 
@@ -18,9 +18,8 @@ function failPosition(error) {
 }
 
 function search(position) {
-  var lat = position.coords.latitude;
-  var lon = position.coords.longitude;
-  var myPos= new google.maps.LatLng(lat, lon);
+
+  var myPos= new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   var mapOptions = {
     zoom: 12,
     center: new google.maps.LatLng(lat, lon)
@@ -29,22 +28,15 @@ function search(position) {
       mapOptions);
 
    var Types=new Array();
-   var ty = window.localStorage.getItem("types");
-   if(ty[0]!='0')
+   var types=Object.keys(state);
+   for(int i=0;i<state.types.length;i++)
    {
-    Types.push('restaurant');
+
    }
-   if(ty[1]!='0')
-   {
-    Types.push('bar');
-   }
-   if(ty[2]!=0)
-   {
-    Types.push('night_club');
-   }
+  
   var request = {
     location: myPos,
-    radius: String(window.localStorage.getItem("distance")),
+    radius: String(window.sessionStorage.getItem("distance")),
     types: Types
 
   };
