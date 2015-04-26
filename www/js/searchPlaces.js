@@ -28,7 +28,13 @@ function search(position) {
       mapOptions);
 
    var Types=new Array();
-   var types=Object.keys(state);
+   for(var key in state.types)
+   {
+    if(state.types[key])
+    {
+      Types.push(key);
+    }
+   }
   
   var request = {
     location: myPos,
