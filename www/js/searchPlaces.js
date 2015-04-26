@@ -7,7 +7,7 @@ function initialize() {
     //get the current position of the device
     navigator.geolocation.getCurrentPosition(search, failPosition,{timeout:10000});
     document.addEventListener("backbutton", onBackKeyDown, false); 
-    state = window.sessionStorage.getItem("state");
+    state =JSON.parse(window.sessionStorage.getItem("state"));
 }
 
 
@@ -29,10 +29,6 @@ function search(position) {
 
    var Types=new Array();
    var types=Object.keys(state);
-   for(int i=0;i<state.types.length;i++)
-   {
-
-   }
   
   var request = {
     location: myPos,
