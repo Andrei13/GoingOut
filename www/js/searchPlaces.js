@@ -110,7 +110,7 @@ function placesCallBack(place,status){
         //var photos =PlacePhoto.getUrl("https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference="+place.reference+"&key=AIzaSyDF1zioHATJVABiPqEK8mSB0fvhCj4hsV0");
         $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+
                                              place.name+rating+'</h1><p>'+
-                                             myTypes+'</p><img src="img/star.png">Add the favourites</img></li>').listview('refresh');
+                                             myTypes+'</p><div><img src="img/star.png" style="width:50px;height:50px">Add the favourites</img></div></li>').listview('refresh');
         console.log(place.place_id);
       }
       
