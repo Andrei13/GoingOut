@@ -108,6 +108,7 @@ function placesCallBack(place,status){
         }
         var myTypes=place.types;
         myTypes[myTypes.length-1]="";
+        var photos = https:"//maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference="+place.reference+"&key=AIzaSyDF1zioHATJVABiPqEK8mSB0fvhCj4hsV0";
         $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+
                                              place.name+rating+'</h1><p>'+
                                              myTypes+'</p><img src="'+
