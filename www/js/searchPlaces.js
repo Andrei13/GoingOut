@@ -108,9 +108,10 @@ function placesCallBack(place,status){
         }
         var myTypes=place.types;
         myTypes[myTypes.length-1]="";
-        $('#PlacesList').append('<li data="'+place.place_id+'"><h2>'+
-                                             place.name+rating+'</h2><p>'+
-                                             myTypes+'</p</li>').listview('refresh');
+        $('#PlacesList').append('<li data="'+place.place_id+'"><h1>'+
+                                             place.name+rating+'</h1><p>'+
+                                             myTypes+'</p><img src="'+
+                                             place.photos[0].getUrl()+'"</img></li>').listview('refresh');
         console.log(place.place_id);
       }
       
