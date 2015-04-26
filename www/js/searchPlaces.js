@@ -32,7 +32,7 @@ function search(position) {
    {
     if(state.types[key])
     {
-      Types.push(key);
+      Types.push(String(key));
     }
    }
   
