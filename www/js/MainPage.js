@@ -1,6 +1,7 @@
 
 
     function onLoad() {
+      restoreState();
         if(window.localStorage.getItem("firstuse")==null)
            {
             window.localStorage.setItem("firstuse","false");
@@ -66,7 +67,6 @@
         alert("welcome");
         window.localStorage.setItem("firstuse","true");
     }	
-    restoreState();	
     document.addEventListener("resume", onResume, false);
 		document.addEventListener("pause", onPause, false);
 		document.addEventListener("backbutton", onBackKeyDown, false);
