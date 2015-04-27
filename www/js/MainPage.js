@@ -51,11 +51,11 @@
        {
           if(state.types[key])
         {
-           $('#'+key).prop("checked",true);
+           $('#'+key).attr("checked");
         }
       }
 }
-   window.reload();
+
     }
 
     // device APIs are available
