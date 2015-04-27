@@ -2,6 +2,8 @@
 
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
+            document.addEventListener("resume", onResume, false);
+    document.addEventListener("pause", onPause, false);
         $('#favButton').click(function()
           {
             window.location="Favourites.html";
@@ -45,8 +47,7 @@
     // device APIs are available
     //
     function onDeviceReady() {   
-		document.addEventListener("resume", onResume, false);
-		document.addEventListener("pause", onPause, false);
+
 		document.addEventListener("backbutton", onBackKeyDown, false);
     }
 
