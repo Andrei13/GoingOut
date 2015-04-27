@@ -43,6 +43,9 @@
     function restoreState()
     {
       var state= JSON.parse(window.sessionStorage.getItem("state"));
+      if(state!=null)
+      {
+
       $( "#Distance" ).val(state.distance);
       for(var key in state.types)
        {
@@ -51,7 +54,7 @@
            $("'#"+key+"'").prop("checked",true);
         }
       }
-
+}
     }
 
     // device APIs are available
