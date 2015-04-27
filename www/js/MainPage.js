@@ -48,7 +48,7 @@
       {
 
          $( "#Distance" ).val(String(state.distance));
-         $("#mycontrolId").selectmenu('refresh');
+         $("#Distance").selectmenu('refresh');
          for(var key in state.types)
            {
              if(state.types[key])
