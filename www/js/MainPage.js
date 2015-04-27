@@ -51,7 +51,7 @@
        {
           if(state.types[key])
         {
-           $("'#"+key+"'").prop("checked",true);
+           $('#'+key).prop("checked",true);
         }
       }
 }
