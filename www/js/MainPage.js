@@ -47,7 +47,7 @@
       if(state!=null)
       {
 
-      $( "#Distance" ).html(state.distance);
+      $( "#Distance").children().attr("value",state.distance);
       for(var key in state.types)
        {
           if(state.types[key])
