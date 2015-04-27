@@ -55,6 +55,7 @@
         }
       }
 }
+   window.reload();
     }
 
     // device APIs are available
