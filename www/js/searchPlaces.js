@@ -35,7 +35,7 @@ function search(position) {
       Types.push(String(key));
     }
    }
-  
+   Types=['restaurant','bar'];
   var request = {
     location: myPos,
     radius: String(window.sessionStorage.getItem("distance")),
