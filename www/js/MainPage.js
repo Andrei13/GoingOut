@@ -44,6 +44,13 @@
     {
       var state= JSON.parse(window.sessionStorage.getItem("state"));
       $( "#Distance" ).val(state.distance);
+      for(var key in state.types)
+       {
+          if(state.types[key])
+        {
+           $("'#"+key+"'").prop("checked",true);
+        }
+      }
 
     }
 
@@ -54,7 +61,8 @@
     {
         alert("welcome");
         window.localStorage.setItem("firstuse","true");
-    }		
+    }	
+    restoreState();	
     document.addEventListener("resume", onResume, false);
 		document.addEventListener("pause", onPause, false);
 		document.addEventListener("backbutton", onBackKeyDown, false);
