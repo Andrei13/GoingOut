@@ -53,7 +53,8 @@
            {
              if(state.types[key])
                {
-                 $('#'+key).attr("checked");
+                 $('#'+key).attr("checked").checkbox('refresh');
+
                }
             }
          //$('#types').controlgroup('refresh');
