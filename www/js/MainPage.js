@@ -56,7 +56,7 @@
                  $('#'+key).attr("checked");
                }
             }
-         // $('checkbox').checkbox('refresh');
+         $('#types').controlgroup('refresh');
        }
 
     }
