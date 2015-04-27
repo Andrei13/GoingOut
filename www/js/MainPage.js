@@ -34,12 +34,17 @@
         window.sessionStorage.setItem("state",JSON.stringify(state));
     }
 
+    function restoreState()
+    {
+      var state= JSON.parse(window.sessionStorage.getItem("state"));
+      $( "#Distance" ).val(state.distance);
+
+    }
+
 
     // device APIs are available
     //
-    function onDeviceReady() {
-		alert("device ready");
-        
+    function onDeviceReady() {   
 		document.addEventListener("resume", onResume, false);
 		document.addEventListener("pause", onPause, false);
 		document.addEventListener("backbutton", onBackKeyDown, false);
