@@ -53,8 +53,8 @@
            {
              if(state.types[key])
                {
-                 $('#'+key).attr("checked");
-                 $('#'+key).checkbox('refresh')
+                 $('#'+key).prop("checked",true).checkboxradio().checkboxradio('refresh');
+
 
                }
             }
