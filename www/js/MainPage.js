@@ -2,15 +2,15 @@
 
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
-            document.addEventListener("resume", onResume, false);
-    document.addEventListener("pause", onPause, false);
         $('#favButton').click(function()
           {
+            saveState();
             window.location="Favourites.html";
           });
         
         $('#hisButton').click(function()
           {
+            saveState();
             window.location="History.html";
           });
 
@@ -43,11 +43,14 @@
 
     }
 
-
+var i=0;
     // device APIs are available
     //
     function onDeviceReady() {   
-
+    i++;
+    alert(i);
+		document.addEventListener("resume", onResume, false);
+		document.addEventListener("pause", onPause, false);
 		document.addEventListener("backbutton", onBackKeyDown, false);
     }
 
