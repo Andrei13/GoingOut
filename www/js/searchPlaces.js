@@ -22,7 +22,7 @@ function search(position) {
   var myPos= new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   var mapOptions = {
     zoom: 12,
-    center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+    center: myPos
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
@@ -37,7 +37,7 @@ function search(position) {
    }
   var request = {
     location: myPos,
-    radius: String(window.sessionStorage.getItem(state.distance)),
+    radius:state.distance,
     types: Types
 
   };
