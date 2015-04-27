@@ -48,6 +48,7 @@
       {
 
       $( "#Distance" ).val(String(state.distance));
+      $("#mycontrolId").selectmenu('refresh');
       for(var key in state.types)
        {
           if(state.types[key])
@@ -55,6 +56,7 @@
            $('#'+key).attr("checked");
         }
       }
+      $('checkbox').checkbox.('refresh');
 }
 
     }
