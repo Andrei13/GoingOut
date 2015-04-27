@@ -47,7 +47,7 @@
       if(state!=null)
       {
 
-      $( "#Distance").children().attr("value",state.distance);
+      $( "#Distance" ).val(String(state.distance));
       for(var key in state.types)
        {
           if(state.types[key])
