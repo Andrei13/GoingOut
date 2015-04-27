@@ -47,7 +47,7 @@
       if(state!=null)
       {
 
-      $( "#Distance" ).val(state.distance);
+      $( "#Distance" ).html(state.distance);
       for(var key in state.types)
        {
           if(state.types[key])
