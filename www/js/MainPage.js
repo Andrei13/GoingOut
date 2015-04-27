@@ -1,6 +1,10 @@
 
 
     function onLoad() {
+        if(window.localStorage.getItem("firstuse")==null)
+           {
+            window.localStorage.setItem("firstuse","false");
+           }
         document.addEventListener("deviceready", onDeviceReady, false);
         $('#favButton').click(function()
           {
@@ -43,13 +47,15 @@
 
     }
 
-var i=0;
     // device APIs are available
     //
     function onDeviceReady() {   
-    i++;
-    alert(i);
-		document.addEventListener("resume", onResume, false);
+    if(window.localStorage.getItem("firstuse")=="false")
+    {
+        alert("welcome");
+        window.localStorage.setItem("firstuse","true");
+    }		
+    document.addEventListener("resume", onResume, false);
 		document.addEventListener("pause", onPause, false);
 		document.addEventListener("backbutton", onBackKeyDown, false);
     }
