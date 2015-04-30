@@ -2,6 +2,7 @@
 
 var map;
 var state;
+var d=new Date();
 
 function initialize() {
     //get the current position of the device
@@ -47,24 +48,16 @@ function search(position) {
   
 }
 
-function callback(results, status, pagination) {
+function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
 
     getPlacesDetails(results); 
 
-    if (pagination.hasNextPage) {
-      sleep:2;
-       pagination.nextPage();
-}
-  else
-  {
      $('li').click(function()
         {
           alert("clicked");
         })
-  }
-  
-  
+
 }
 }
 
@@ -83,7 +76,8 @@ function getPlacesDetails(places)
       position: places[i].geometry.location,
       map: map,
       title: 'your location'});
-      console.log("markerdisplayed");
+      console.log("markerdisplayed",d.getMilliseconds());
+
       }
       
 }
@@ -109,7 +103,7 @@ function placesCallBack(place,status){
       }
       else
       {
-        console.log(status);
+        console.log(status,d.getMilliseconds());
       }
       
   }
