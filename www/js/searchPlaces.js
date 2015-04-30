@@ -69,19 +69,17 @@ function getPlacesDetails(places)
      };
      nextPlace=places[i].place_id;
      var service = new google.maps.places.PlacesService(map);
-  
-      setTimeout(function() 
-        {
-          service.getDetails(request,placesCallBack);
-        },1000); 
-    
+
+      service.getDetails(request,placesCallBack);
+
+      /*
       marker = new google.maps.Marker({
       position: places[i].geometry.location,
       map: map,
       title: 'your location'});
       d=new Date();
       console.log("markerdisplayed",d.getMilliseconds());
-
+      */
       }
       
 }
