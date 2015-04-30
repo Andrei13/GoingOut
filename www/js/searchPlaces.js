@@ -76,6 +76,7 @@ function getPlacesDetails(places)
       position: places[i].geometry.location,
       map: map,
       title: 'your location'});
+      d=new Date();
       console.log("markerdisplayed",d.getMilliseconds());
 
       }
@@ -99,10 +100,12 @@ function placesCallBack(place,status){
         $('#PlacesList').append('<li data="'+place.place_id+'"><h1 style="font-size: 150%">'+
                                              place.name+rating+'</h1><p>'+
                                              myTypes+'</p><div><img src="img/star.png" style="width:20px;height:20px">Add the favourites</img></div></li>').listview('refresh');
-        console.log(place.place_id);
+        d=new Date();
+        console.log(place.place_id),d.getMilliseconds();
       }
       else
       {
+        d=new Date();
         console.log(status,d.getMilliseconds());
       }
       
