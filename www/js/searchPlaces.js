@@ -68,13 +68,14 @@ function getPlaceDetails(thePlace,service)
       placeId: thePlace.place_id
      };
       service.getDetails(request,function(place,status){
+      var distance = distance(place.geometry.location.lat,place.geometry.location.lng,myPos.lat,myPos.lng);
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         Places[currentNrPlacesDisplayed] = {
         "place_id":place.place_id,
         "rating":place.rating,
         "types":place.types,
         "name":place.name,
-        "distance": distance(place.geometry.location.lat,place.geometry.location.lng,myPos.lat,myPos.lng)
+        "distance": distance
       }
         displayPlace(Places[currentNrPlacesDisplayed]);
         currentNrPlacesDisplayed++;
