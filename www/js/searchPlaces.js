@@ -12,6 +12,7 @@ function initialize() {
     navigator.geolocation.getCurrentPosition(search, failPosition,{timeout:10000});
     document.addEventListener("backbutton", onBackKeyDown, false); 
     state =JSON.parse(window.sessionStorage.getItem("state"));
+    $('.ui-content').mask("Searching");
 }
 
 
@@ -86,6 +87,7 @@ function getPlaceDetails(thePlace,service)
           {
              alert("clicked");
           });
+          $('.ui-content').unmask();
         }
       }
       else if (status== google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
