@@ -88,7 +88,7 @@ function getPlaceDetails(thePlace,service)
              alert("clicked");
           });
           $('.ui-content').unmask();
-          $('#sortbydiv').append("<div class="ui-field-contain" data-controltype="selectmenu">
+          $('#sortbydiv').append('<div class="ui-field-contain" data-controltype="selectmenu">
             <label for="Distance">
                 Sort by
             </label>
@@ -104,7 +104,7 @@ function getPlaceDetails(thePlace,service)
                 </option>
       
       </select>
-        </div>")
+        </div>')
         }
       }
       else if (status== google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
