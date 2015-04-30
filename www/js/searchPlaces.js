@@ -68,7 +68,7 @@ function getPlaceDetails(place,service)
 {
   
     var request = {
-      placeId: place[i].place_id
+      placeId: place.place_id
      };
       service.getDetails(request,function(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
