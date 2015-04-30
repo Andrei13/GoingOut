@@ -4,6 +4,8 @@ var map;
 var state;
 var nrPlaces;
 var currentNrPlacesDisplayed;
+var Places = new Array();
+var myPos;
 
 function initialize() {
     //get the current position of the device
@@ -21,7 +23,7 @@ function failPosition(error) {
 
 function search(position) {
 
-  var myPos= new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  myPos= new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   var mapOptions = {
     zoom: 12,
     center: myPos
@@ -67,21 +69,14 @@ function getPlaceDetails(thePlace,service)
      };
       service.getDetails(request,function(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
-        var rating;
-        if(place.rating!=null)
-        {
-          rating = ' ('+place.rating+'/5)';
-        }
-        else
-        {
-          rating = ' (rating not available)';
-        }
-        var myTypes=place.types;
-        myTypes[myTypes.length-1]="";
-        //var photos =PlacePhoto.getUrl("https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference="+place.reference+"&key=AIzaSyDF1zioHATJVABiPqEK8mSB0fvhCj4hsV0");
-        $('#PlacesList').append('<li id="'+place.place_id+'"><h1 style="font-size: 150%">'+
-                                             place.name+rating+'</h1><p>'+
-                                             myTypes+'</p><div><img src="img/star.png" style="width:20px;height:20px">Add the favourites</img></div></li>').listview('refresh');
+        Places[currentNrPlacesDisplayed] = {
+        "place_id":place.place_id,
+        "rating":place.rating,
+        "types":place.types,
+        "name":place.name,
+        "distance": distance(place.geometry.location.lat,place.geometry.location.lng,myPos.lat,myPos.lng)
+      }
+        displayPlace(Places[currentNrPlacesDisplayed]);
         currentNrPlacesDisplayed++;
         if(currentNrPlacesDisplayed==nrPlaces)
         {
@@ -112,6 +107,41 @@ function getPlaceDetails(thePlace,service)
       }
 
 
+  function displayPlace(place)
+     {
+        var rating;
+        if(place.rating!=null)
+        {
+          rating = ' ('+place.rating+'/5)';
+        }
+        else
+        {
+          rating = ' (rating not available)';
+        }
+        var myTypes=place.types;
+        myTypes[myTypes.length-1]="";
+        //var photos =PlacePhoto.getUrl("https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference="+place.reference+"&key=AIzaSyDF1zioHATJVABiPqEK8mSB0fvhCj4hsV0");
+        $('#PlacesList').append('<li id="'+place.place_id+'"><h1 style="font-size: 150%">'+
+                                             place.name+rating + distance+'</h1><p>'+
+                                             myTypes+'</p><div><img src="img/star.png" style="width:20px;height:20px">Add the favourites</img></div></li>').listview('refresh');
+      }
+
+  //method taken from : http://www.geodatasource.com/developers/javascript
+  function distance(lat1, lon1, lat2, lon2) {
+    var radlat1 = Math.PI * lat1/180;
+    var radlat2 = Math.PI * lat2/180;
+    var radlon1 = Math.PI * lon1/180;
+    var radlon2 = Math.PI * lon2/180;
+    var theta = lon1-lon2;
+    var radtheta = Math.PI * theta/180;
+    var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+    dist = Math.acos(dist);
+    dist = dist * 180/Math.PI;
+    dist = dist * 60 * 1.1515;
+    dist = dist * 1.609344;
+
+    return dist;
+}
 
     
 
