@@ -76,7 +76,7 @@ function getPlaceDetails(thePlace,service)
         "rating":place.rating,
         "types":place.types,
         "name":place.name,
-        "distance": distance
+        "distance": _distance
       }
         displayPlace(Places[currentNrPlacesDisplayed]);
         currentNrPlacesDisplayed++;
