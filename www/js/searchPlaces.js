@@ -50,42 +50,27 @@ function search(position) {
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-    setTimeout(function()
-      {getPlacesDetails(results); },1000);
+    var service = new google.maps.places.PlacesService(map);
+    for (var i = 0, place; place = results[i];i++) {
+         getPlaceDetails(place,service);
     
 
-     $('li').click(function()
-        {
-          alert("clicked");
-        })
+         $('li').click(function()
+          {
+             alert("clicked");
+          });
 
-}
-}
+     }
+   }
+ }
 
-function getPlacesDetails(places)
+function getPlaceDetails(place,service)
 {
-  for (var i = 0, place; place = places[i];i++) {
+  
     var request = {
-      placeId: places[i].place_id
+      placeId: place[i].place_id
      };
-     nextPlace=places[i].place_id;
-     var service = new google.maps.places.PlacesService(map);
-
-      service.getDetails(request,placesCallBack);
-
-      /*
-      marker = new google.maps.Marker({
-      position: places[i].geometry.location,
-      map: map,
-      title: 'your location'});
-      d=new Date();
-      console.log("markerdisplayed",d.getMilliseconds());
-      */
-      }
-      
-}
-
-function placesCallBack(place,status){
+      service.getDetails(request,function(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
         var rating;
         if(place.rating!=null)
@@ -105,13 +90,29 @@ function placesCallBack(place,status){
         d=new Date();
         console.log(place.place_id,d.getMilliseconds());
       }
-      else
+      else if (status== google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
       {
         d=new Date();
         console.log(status,d,getSeconds(),d.getMilliseconds());
+        setTimeout(function{
+          getPlaceDetails(place,service);
+        },200);
       }
       
-  }
+  });
+
+      /*
+      marker = new google.maps.Marker({
+      position: places[i].geometry.location,
+      map: map,
+      title: 'your location'});
+      d=new Date();
+      console.log("markerdisplayed",d.getMilliseconds());
+      */
+      }
+
+
+
     
 
 function onBackKeyDown() {
