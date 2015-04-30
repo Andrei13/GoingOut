@@ -73,7 +73,7 @@ function getPlacesDetails(places)
       setTimeout(function() 
         {
           service.getDetails(request,placesCallBack);
-        },100); 
+        },1000); 
     
       marker = new google.maps.Marker({
       position: places[i].geometry.location,
