@@ -83,7 +83,7 @@ function getPlaceDetails(thePlace,service)
                                              place.name+rating+'</h1><p>'+
                                              myTypes+'</p><div><img src="img/star.png" style="width:20px;height:20px">Add the favourites</img></div></li>').listview('refresh');
         currentNrPlacesDisplayed++;
-        if(getCurrentPosition==nrPlaces)
+        if(currentNrPlacesDisplayed==nrPlaces)
         {
           $('li').click(function()
           {
