@@ -88,21 +88,6 @@ function getPlaceDetails(thePlace,service)
              alert("clicked");
           });
           $('.ui-content').unmask();
-          $('#sortbydiv').append(
-            '<label for="Distance">'+
-                'Sort by'+
-            '</label>'+
-            '<select id="Sortby" name="" data-theme="d" data-mini="true">'+
-      '<option value="Name">'+
-                    'name'+
-                '</option>'+
-                '<option value="Rating">'+
-                    'rating'+
-                '</option>'+
-                '<option value="Distance">'+
-                    'distance'+
-                '</option>'+    
-      '</select>').selectmenu('refresh');
         
         }
       }
