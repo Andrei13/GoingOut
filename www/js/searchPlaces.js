@@ -2,7 +2,8 @@
 
 var map;
 var state;
-var d=new Date();
+var nrPlaces;
+var currentNrPlacesDisplayed;
 
 function initialize() {
     //get the current position of the device
@@ -51,22 +52,16 @@ function search(position) {
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     var service = new google.maps.places.PlacesService(map);
+    nrPlaces=results.length;
+    currentNrPlacesDisplayed=0;
     for (var i = 0, place; place = results[i];i++) {
          getPlaceDetails(place,service);
-    
-
-         $('li').click(function()
-          {
-             alert("clicked");
-          });
-
      }
    }
  }
 
 function getPlaceDetails(thePlace,service)
 {
-  
     var request = {
       placeId: thePlace.place_id
      };
@@ -84,16 +79,23 @@ function getPlaceDetails(thePlace,service)
         var myTypes=place.types;
         myTypes[myTypes.length-1]="";
         //var photos =PlacePhoto.getUrl("https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference="+place.reference+"&key=AIzaSyDF1zioHATJVABiPqEK8mSB0fvhCj4hsV0");
-        $('#PlacesList').append('<li data="'+place.place_id+'"><h1 style="font-size: 150%">'+
+        $('#PlacesList').append('<li id="'+place.place_id+'"><h1 style="font-size: 150%">'+
                                              place.name+rating+'</h1><p>'+
                                              myTypes+'</p><div><img src="img/star.png" style="width:20px;height:20px">Add the favourites</img></div></li>').listview('refresh');
-        d=new Date();
-        console.log(place.place_id,d.getMilliseconds());
+        currentNrPlacesDisplayed++;
+        if(getCurrentPosition==nrPlaces)
+        {
+          $('li').click(function()
+          {
+             alert("clicked");
+          });
+        }
       }
       else if (status== google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
       {
-        d=new Date();
-        console.log(status,d.getSeconds(),d.getMilliseconds());
+
+        //recall the function with a delay of 200 miliseconds in case we have the OVER_QUERY_LIMIT
+        //solution provided by Paulo Rodriguez :  http://stackoverflow.com/questions/12721287/settimeout-to-avoid-over-query-limit
         setTimeout(function(){
           getPlaceDetails(thePlace,service);
         },200);
@@ -106,8 +108,6 @@ function getPlaceDetails(thePlace,service)
       position: places[i].geometry.location,
       map: map,
       title: 'your location'});
-      d=new Date();
-      console.log("markerdisplayed",d.getMilliseconds());
       */
       }
 
