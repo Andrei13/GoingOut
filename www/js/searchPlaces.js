@@ -94,7 +94,7 @@ function getPlaceDetails(place,service)
       {
         d=new Date();
         console.log(status,d,getSeconds(),d.getMilliseconds());
-        setTimeout(function{
+        setTimeout(function(){
           getPlaceDetails(place,service);
         },200);
       }
