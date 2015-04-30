@@ -3,7 +3,7 @@
 
 
 function onLoad(){
-	cordova.exec(null, null, "SplashScreen", "show", []);
+	//cordova.exec(null, null, "SplashScreen", "show", []);
 	setTimeout(function(){
        window.location='MainPage.html';             
     }, 2000);
