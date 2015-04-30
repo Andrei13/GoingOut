@@ -108,7 +108,7 @@ function placesCallBack(place,status){
       else
       {
         d=new Date();
-        console.log(status,d.getMilliseconds());
+        console.log(status,d,getSeconds(),d.getMilliseconds());
       }
       
   }
