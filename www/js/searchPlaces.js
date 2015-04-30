@@ -70,7 +70,10 @@ function getPlacesDetails(places)
      nextPlace=places[i].place_id;
      var service = new google.maps.places.PlacesService(map);
   
-      service.getDetails(request,placesCallBack); 
+      setTimeout(function() 
+        {
+          service.getDetails(request,placesCallBack);
+        },100); 
     
       marker = new google.maps.Marker({
       position: places[i].geometry.location,
@@ -101,7 +104,7 @@ function placesCallBack(place,status){
                                              place.name+rating+'</h1><p>'+
                                              myTypes+'</p><div><img src="img/star.png" style="width:20px;height:20px">Add the favourites</img></div></li>').listview('refresh');
         d=new Date();
-        console.log(place.place_id),d.getMilliseconds();
+        console.log(place.place_id,d.getMilliseconds());
       }
       else
       {
