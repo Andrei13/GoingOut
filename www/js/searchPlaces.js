@@ -93,7 +93,7 @@ function getPlaceDetails(place,service)
       else if (status== google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
       {
         d=new Date();
-        console.log(status,d,getSeconds(),d.getMilliseconds());
+        console.log(status,d.getSeconds(),d.getMilliseconds());
         setTimeout(function(){
           getPlaceDetails(place,service);
         },200);
