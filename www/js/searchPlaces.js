@@ -124,7 +124,7 @@ function getPlaceDetails(thePlace,service)
         myTypes[myTypes.length-1]="";
         //var photos =PlacePhoto.getUrl("https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference="+place.reference+"&key=AIzaSyDF1zioHATJVABiPqEK8mSB0fvhCj4hsV0");
         $('#PlacesList').append('<li id="'+place.place_id+'"><h1 style="font-size: 150%">'+
-                                             place.name+'</h1><h2>'+rating +'</h2><h2>'+place.distance+'meters away</h2><p>'+
+                                             place.name+'</h1><h2>'+rating +'</h2><h2>'+place.distance+' meters away</h2><p>'+
                                              myTypes+'</p><div><img src="img/star.png" style="width:20px;height:20px">Add the favourites</img></div></li>').listview('refresh');
       }
 
