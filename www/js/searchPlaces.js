@@ -51,8 +51,8 @@ function search(position) {
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     setTimeout(function()
-      {},1000);
-    getPlacesDetails(results); 
+      {getPlacesDetails(results); },1000);
+    
 
      $('li').click(function()
         {
