@@ -1,4 +1,4 @@
-//Examples code : https://developers.google.com/maps/documentation/javascript/examples/
+// : https://developers.google.com/maps/documentation/javascript/examples/
 
 var map;
 var state;
@@ -83,6 +83,7 @@ function getPlacesDetails(places)
       position: places[i].geometry.location,
       map: map,
       title: 'your location'});
+      console.log("markerdisplayed");
       }
       
 }
@@ -105,6 +106,10 @@ function placesCallBack(place,status){
                                              place.name+rating+'</h1><p>'+
                                              myTypes+'</p><div><img src="img/star.png" style="width:20px;height:20px">Add the favourites</img></div></li>').listview('refresh');
         console.log(place.place_id);
+      }
+      else
+      {
+        console.log(status);
       }
       
   }
