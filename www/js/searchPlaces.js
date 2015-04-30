@@ -64,11 +64,11 @@ function callback(results, status) {
    }
  }
 
-function getPlaceDetails(place,service)
+function getPlaceDetails(thePlace,service)
 {
   
     var request = {
-      placeId: place.place_id
+      placeId: thePlace.place_id
      };
       service.getDetails(request,function(place,status){
    if (status== google.maps.places.PlacesServiceStatus.OK) {
@@ -95,7 +95,7 @@ function getPlaceDetails(place,service)
         d=new Date();
         console.log(status,d.getSeconds(),d.getMilliseconds());
         setTimeout(function(){
-          getPlaceDetails(place,service);
+          getPlaceDetails(thePlace,service);
         },200);
       }
       
