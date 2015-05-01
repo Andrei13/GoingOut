@@ -11,13 +11,13 @@
     zoom: 12,
     center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
   };
-  map = new google.maps.Map(document.getElementById('map-canvas'),
+    map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
     var service = new google.maps.places.PlacesService(map);
 
     var request={
-    	placeId : window.sessionstorage.getItem("selectedplace")
+    	placeId : window.sessionStorage.getItem("selectedplace")
     };
 
     service.getDetails(request, function (place,status){
