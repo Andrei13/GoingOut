@@ -111,7 +111,7 @@ function getPlaceDetails(thePlace,service)
 
   function onPlaceClicked(e)
   {
-    window.sessionstorage.setItem("selectedPlace",e.currentTarget.id);
+    window.sessionStorage.setItem("selectedPlace",e.currentTarget.id);
   }
 
   function displayPlace(place)
