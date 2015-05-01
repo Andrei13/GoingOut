@@ -17,7 +17,7 @@
     var service = new google.maps.places.PlacesService(map);
 
     var request={
-    	placeId : window.sessionStorage.getItem("selectedplace")
+    	placeId : window.sessionStorage.getItem("selectedPlace")
     };
 
     service.getDetails(request, function (place,status){
