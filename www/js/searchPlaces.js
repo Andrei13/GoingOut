@@ -83,10 +83,8 @@ function getPlaceDetails(thePlace,service)
         currentNrPlacesDisplayed++;
         if(currentNrPlacesDisplayed==nrPlaces)
         {
-          $('li').click(function()
-          {
-             alert("clicked");
-          });
+          $('li').click(onPlaceClicked);
+        
           $('.ui-content').unmask();
         
         }
@@ -98,7 +96,7 @@ function getPlaceDetails(thePlace,service)
         //solution provided by Paulo Rodriguez :  http://stackoverflow.com/questions/12721287/settimeout-to-avoid-over-query-limit
         setTimeout(function(){
           getPlaceDetails(thePlace,service);
-        },200);
+        },100);
       }
       
   });
@@ -111,6 +109,10 @@ function getPlaceDetails(thePlace,service)
       */
       }
 
+  function onPlaceClicked(e)
+  {
+    alert("hi");
+  }
 
   function displayPlace(place)
      {
