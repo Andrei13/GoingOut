@@ -1,5 +1,5 @@
 
-  function onLoad()
+  function initialize()
   {
   	navigator.geolocation.getCurrentPosition(search, failPosition,{timeout:10000});
   	
@@ -45,3 +45,5 @@ function failPosition(error) {
   alert("Your position is not available, please check your settings");
   
 }
+
+google.maps.event.addDomListener(window, 'load', initialize);
