@@ -111,7 +111,7 @@ function getPlaceDetails(thePlace,service)
 
   function onPlaceClicked(e)
   {
-    alert("hi");
+    alert(e.currentTarget.id);
   }
 
   function displayPlace(place)
