@@ -112,6 +112,7 @@ function getPlaceDetails(thePlace,service)
   function onPlaceClicked(e)
   {
     window.sessionStorage.setItem("selectedPlace",e.currentTarget.id);
+    window.location="ViewPlace.html";
   }
 
   function displayPlace(place)

@@ -39,3 +39,9 @@
     });
 
   }
+
+  //called if the position is not obtained correctly
+function failPosition(error) {
+  alert("Your position is not available, please check your settings");
+  
+}
