@@ -104,13 +104,14 @@ function addFavourite()
     {
       var details={
         "name": selectedPlace.name,
-        "openinghours": new Array()
+        "openinghours": selectedPlace.opening_hours.weekday_text
       }
+      /*
       for(var i=0;i<7;i++)
       {
         details.openinghours[i]=selectedPlace.opening_hours.weekday_text[i];
-      }
-      window.localStorage.setItem("favourite"+i, JSON.Stringify(details));
+      }*/
+      window.localStorage.setItem("favourite"+i, JSON.stringify(details));
       ok=true;
       }
       else{
