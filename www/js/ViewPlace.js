@@ -114,6 +114,11 @@ function addFavourite()
       ok=true;
       }
       else{
+        var s=window.localStorage.getItem("favourite"+i);
+        if(s.name==details.name)
+        {
+          return 0;
+        }
         i++;
       }
     }
