@@ -103,7 +103,7 @@ function addFavourite()
     if(window.localStorage.getItem("favourite"+i)==null)
     {
       var details={
-        "name": selectedPlace.name;
+        "name": selectedPlace.name,
         "openinghours":selectedPlace.opening_hours.weekday_text
       }
       window.localStorage.setItem("favourite"+i, JSON.Stringify(details));
