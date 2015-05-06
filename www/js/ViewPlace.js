@@ -34,13 +34,6 @@ var directionsService = new google.maps.DirectionsService();
               map: map,
               position: place.geometry.location
          });
-          var open;
-              try{
-                  open = place.opening_hours.periods[1].open.time;
-                }
-                catch(e){
-                  open='No work time';
-                }
 
           var request = {
                        origin: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
@@ -54,6 +47,8 @@ var directionsService = new google.maps.DirectionsService();
              directionsDisplay.setDirections(response);
                }
             });
+
+         $('#schedule').append('<img src="img/star.png" style="width:20px;height:20px">Add the favourites</img>');
        }
          else  if (status== google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
            {
