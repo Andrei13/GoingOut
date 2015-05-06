@@ -5,7 +5,7 @@
   	var i=0;
   	while(window.localStorage.getItem("favourite"+i)!=null)
   	{
-  		var item = window.localStorage.getItem("favourite"+i);
+  		var item = JSON.parse(window.localStorage.getItem("favourite"+i));
   		$('#placesList').append('<li id="favourite"'+i+'><h1>'+item.name+'</h1></li>').listview('refresh');
   		for(var j=0;j<7;j++)
          {
