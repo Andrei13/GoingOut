@@ -69,7 +69,7 @@ function showOpeningHours(place)
 {
   if(place.opening_hours.weekday_text[0]!=null && place.opening_hours.weekday_text[0]!="")
   {
-       for(int i=0;i<7;i++)
+       for(var i=0;i<7;i++)
        {
         $('#openinghours').append('<li><h1 style="font-size: 150%>'+place.opening_hours.weekday_text[i]+'</h1></li>')
        }
