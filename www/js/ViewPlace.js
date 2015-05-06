@@ -96,12 +96,21 @@ function onBackKeyDown() {
 
 function addFavourite()
 {
-   for(var i=0;i<10;i++)
+  var ok=false;
+  var i=0;
+   while(ok!=true)
    {
     if(window.localStorage.getItem("favourite"+i)==null)
     {
-      var fav=window.localStorage.setItem("favourite"+i, JSON.Stringify(selectedPlace));
-      var fav1=window.localStorage.getItem("favourite"+i);
+      var details={
+        "name": selectedPlace.name;
+        "openinghours":selectedPlace.opening_hours.weekday_text
+      }
+      window.localStorage.setItem("favourite"+i, JSON.Stringify(details));
+      ok=true;
+      }
+      else{
+        i++;
       }
     }
    }
