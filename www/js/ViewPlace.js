@@ -100,7 +100,9 @@ function addFavourite()
    {
     if(window.localStorage.getItem("favourite"+i)==null)
     {
-      alert(selectedPlace.name);
+      var fav=window.localStorage.setItem("favourite"+i, JSON.Stringify(selectedPlace));
+      var fav1=window.localStorage.getItem("favourite"+i);
+      }
     }
    }
 }
