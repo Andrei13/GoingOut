@@ -45,10 +45,12 @@ var directionsService = new google.maps.DirectionsService();
              directionsDisplay = new google.maps.DirectionsRenderer();
              directionsDisplay.setMap(map);
              directionsDisplay.setDirections(response);
+             showOpeningHouse(place)
+             $('#schedule').append('<img src="img/star.png" style="width:20px;height:20px">Add the favourites</img>');
                }
             });
 
-         $('#schedule').append('<img src="img/star.png" style="width:20px;height:20px">Add the favourites</img>');
+         
        }
          else  if (status== google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
            {
