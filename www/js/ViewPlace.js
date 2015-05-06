@@ -27,7 +27,7 @@ var selectedPlace;
         $('#title').html(place.name);
             var mapOptions = {
                 zoom: 12,
-                center: new google.maps.LatLng(place.geometry.location.j,place.geometry.location.C)
+                center: new google.maps.LatLng(place.geometry.location.A,place.geometry.location.F)
                   };
             map = new google.maps.Map(document.getElementById('map-canvas'),
                       mapOptions);
@@ -39,7 +39,7 @@ var selectedPlace;
           selectedPlace=place;
           var request = {
                        origin: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-                       destination:new google.maps.LatLng(place.geometry.location.j,place.geometry.location.C),
+                       destination:new google.maps.LatLng(place.geometry.location.A,place.geometry.location.F),
                        travelMode: google.maps.TravelMode.WALKING
                         };
          directionsService.route(request, function(response, status) {
