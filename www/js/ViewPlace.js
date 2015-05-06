@@ -47,8 +47,8 @@ var directionsService = new google.maps.DirectionsService();
              directionsDisplay.setMap(map);
              directionsDisplay.setDirections(response);
              showOpeningHours(place)
-             $('#info').append('<div id="addFav" style="font-size: 150%"><img src="img/star.png" style="width:40px;height:40px">Add the favourites</img></div>');
-             
+             $('#addFav').append('<img src="img/star.png" style="width:40px;height:40px">Add to favourites</img>');
+             $('#addFav').click(addFavourite);
                }
             });
 
@@ -75,7 +75,7 @@ function showOpeningHours(place)
         $('#openinghours').append('<li><h1 style="font-size: 150%">'+
                      place.opening_hours.weekday_text[i]+'</h1></li>').listview('refresh');
        }
-       $('#addFav').click(addFavourite);
+
   }
   catch(error)
   {
