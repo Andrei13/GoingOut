@@ -71,7 +71,7 @@ function getPlaceDetails(thePlace,service)
       service.getDetails(request,function(place,status){
       
    if (status== google.maps.places.PlacesServiceStatus.OK) {
-    var _distance = distance(place.geometry.location[0],place.geometry.location[1],myPos[0],myPos[1]);
+    var _distance = distance(place.geometry.location.lat,place.geometry.location.lng,myPos.lat,myPos.lng);
         Places[currentNrPlacesDisplayed] = {
         "place_id":place.place_id,
         "rating":place.rating,
