@@ -107,12 +107,10 @@
     // Handle the pause event
     //
     function onPause() {
-		alert("pause");		
-		
+	
     }
 	
 	function onResume() {
-		alert("resume");
 		
     }
 
