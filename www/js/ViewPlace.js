@@ -18,7 +18,7 @@ var directionsService = new google.maps.DirectionsService();
     var service = new google.maps.places.PlacesService(map);
 
     var request={
-    	placeId : window.sessionStorage.getItem("selectedPlace")
+    	reference : window.sessionStorage.getItem("selectedPlace")
     };
 
     service.getDetails(request, function (place,status){
@@ -41,7 +41,7 @@ var directionsService = new google.maps.DirectionsService();
                 catch(e){
                   open='No work time';
                 }
-              
+
           var request = {
                        origin: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
                        destination:new google.maps.LatLng(place.geometry.location.j,place.geometry.location.C),
