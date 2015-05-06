@@ -104,7 +104,11 @@ function addFavourite()
     {
       var details={
         "name": selectedPlace.name,
-        "openinghours":selectedPlace.opening_hours.weekday_text
+        "openinghours": new Array()
+      }
+      for(var i=0;i<7;i++)
+      {
+        details.openinghours[i]=selectedPlace.opening_hours.weekday_text[i];
       }
       window.localStorage.setItem("favourite"+i, JSON.Stringify(details));
       ok=true;
