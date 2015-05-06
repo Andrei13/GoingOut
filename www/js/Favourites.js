@@ -9,8 +9,8 @@
   		$('#placesList').append('<li id="favourite"'+i+'><h1>'+item.name+'</h1></li>').listview('refresh');
   		for(var j=0;j<7;j++)
          {
-           $('#favourite'+i).append('<li><h1 style="font-size: 150%">'+
-                     place.opening_hours.weekday_text[j]+'</h1></li>').listview('refresh');
+           $('#favourite'+i).append('<li><h1 style="font-size: 50%">'+
+                     item.openinghours[j]+'</h1></li>').listview('refresh');
           } 
           i++;
   }
