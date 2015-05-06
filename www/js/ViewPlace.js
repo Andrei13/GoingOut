@@ -71,7 +71,8 @@ function showOpeningHours(place)
   {
        for(var i=0;i<7;i++)
        {
-        $('#openinghours').append('<li><h1 style="font-size: 150%>'+place.opening_hours.weekday_text[i]+'</h1></li>')
+        $('#openinghours').append('<li><h1 style="font-size: 150%>'+
+                     place.opening_hours.weekday_text[i]+'</h1></li>').listview('refresh');
        }
   }
   else
