@@ -1,8 +1,10 @@
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
 
   function initialize()
   {
   	navigator.geolocation.getCurrentPosition(search, failPosition,{timeout:10000});
-  	
+  	document.addEventListener("backbutton", onBackKeyDown, false);
   }
 
   function search(position)
@@ -26,6 +28,17 @@
               map: map,
               position: place.geometry.location
          });
+          directionsDisplay = new google.maps.DirectionsRenderer();
+          var request = {
+                       origin: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                       destination:new google.maps.LatLng(place.geometry.location.C, place.geometry.location.j),
+                       travelMode: google.maps.TravelMode.WALKING
+                        };
+         directionsService.route(request, function(response, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+             directionsDisplay.setDirections(response);
+               }
+            });
        }
          else  if (status== google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
            {
@@ -44,6 +57,10 @@
 function failPosition(error) {
   alert("Your position is not available, please check your settings");
   
+}
+
+function onBackKeyDown() {
+       window.location='showPlaces.html';
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
