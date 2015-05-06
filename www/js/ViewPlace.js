@@ -31,7 +31,7 @@ var directionsService = new google.maps.DirectionsService();
           directionsDisplay = new google.maps.DirectionsRenderer();
           var request = {
                        origin: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-                       destination:new google.maps.LatLng(place.geometry.location.C, place.geometry.location.j),
+                       destination:new google.maps.LatLng(place.geometry.location.j,place.geometry.location.C),
                        travelMode: google.maps.TravelMode.WALKING
                         };
          directionsService.route(request, function(response, status) {
