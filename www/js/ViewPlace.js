@@ -10,12 +10,12 @@ var directionsService = new google.maps.DirectionsService();
   function search(position)
   {
   	var mapOptions = {
-    zoom: 12,
+    zoom: 16,
     center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
   };
     map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-
+    directionsDisplay.setMap(map);
     var service = new google.maps.places.PlacesService(map);
 
     var request={
