@@ -1,5 +1,6 @@
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
+var selectedPlace;
 
   function initialize()
   {
@@ -35,7 +36,7 @@ var directionsService = new google.maps.DirectionsService();
               map: map,
               position: place.geometry.location
          });
-
+          selectedPlace=place;
           var request = {
                        origin: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
                        destination:new google.maps.LatLng(place.geometry.location.j,place.geometry.location.C),
@@ -95,11 +96,11 @@ function onBackKeyDown() {
 
 function addFavourite()
 {
-   for(var i=o;i<10;i++)
+   for(var i=0;i<10;i++)
    {
     if(windows.localStorage.getItem("favourite"+i)!=null)
     {
-      alert("slot "+i+" free");
+      alert(selectedPlace.name);
     }
    }
 }
