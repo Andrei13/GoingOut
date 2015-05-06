@@ -98,6 +98,7 @@ function addFavourite()
 {
    for(var i=0;i<10;i++)
    {
+    var o=window.localStorage.getItem("favourite"+i);
     if(window.localStorage.getItem("favourite"+i)!=null)
     {
       alert(selectedPlace.name);
