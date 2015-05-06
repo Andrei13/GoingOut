@@ -47,7 +47,7 @@ var directionsService = new google.maps.DirectionsService();
              directionsDisplay.setMap(map);
              directionsDisplay.setDirections(response);
              showOpeningHours(place)
-             $('#info').append('<div><img src="img/star.png" style="width:40px;height:40px">Add the favourites</img></div>');
+             $('#addFav').click(addFavourite);
                }
             });
 
@@ -73,7 +73,6 @@ function showOpeningHours(place)
        {
         $('#openinghours').append('<li><h1 style="font-size: 150%">'+
                      place.opening_hours.weekday_text[i]+'</h1></li>').listview('refresh');
-        alert(place.opening_hours.weekday_text[i]);
        }
   }
   catch(error)
@@ -90,6 +89,11 @@ function failPosition(error) {
 
 function onBackKeyDown() {
        window.location='showPlaces.html';
+}
+
+function addFavourite()
+{
+
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
