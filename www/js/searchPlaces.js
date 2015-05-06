@@ -66,14 +66,14 @@ function callback(results, status) {
 function getPlaceDetails(thePlace,service)
 {
     var request = {
-      placeId: thePlace.place_id
+      placeId: thePlace.reference
      };
       service.getDetails(request,function(place,status){
       
    if (status== google.maps.places.PlacesServiceStatus.OK) {
     var _distance = distance(place.geometry.location.C,place.geometry.location.j,myPos.C,myPos.j);
         Places[currentNrPlacesDisplayed] = {
-        "place_id":place.place_id,
+        "place_id":place.reference,
         "rating":place.rating,
         "types":place.types,
         "name":place.name,
@@ -131,7 +131,7 @@ function getPlaceDetails(thePlace,service)
         //var photos =PlacePhoto.getUrl("https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference="+place.reference+"&key=AIzaSyDF1zioHATJVABiPqEK8mSB0fvhCj4hsV0");
         $('#PlacesList').append('<li id="'+place.place_id+'"><h1 style="font-size: 150%">'+
                                              place.name+'</h1><h2>'+rating +'</h2><h2>'+place.distance+' meters away</h2><p>'+
-                                             myTypes+'</p><div><img src="img/star.png" style="width:20px;height:20px">Add the favourites</img></div></li>').listview('refresh');
+                                             myTypes+'</p></li>').listview('refresh');
       }
 
   //method taken from : http://www.geodatasource.com/developers/javascript
