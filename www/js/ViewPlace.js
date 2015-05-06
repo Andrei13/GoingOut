@@ -29,7 +29,7 @@ var directionsService = new google.maps.DirectionsService();
                   };
             map = new google.maps.Map(document.getElementById('map-canvas'),
                       mapOptions);
-            directionsDisplay.setMap(map);
+            
            var marker = new google.maps.Marker({
               map: map,
               position: place.geometry.location
@@ -43,6 +43,7 @@ var directionsService = new google.maps.DirectionsService();
          directionsService.route(request, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
              directionsDisplay = new google.maps.DirectionsRenderer();
+             directionsDisplay.setMap(map);
              directionsDisplay.setDirections(response);
                }
             });
