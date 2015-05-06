@@ -66,7 +66,7 @@ function callback(results, status) {
 function getPlaceDetails(thePlace,service)
 {
     var request = {
-      placeId: thePlace.reference
+      reference: thePlace.reference
      };
       service.getDetails(request,function(place,status){
       
