@@ -45,8 +45,8 @@ var directionsService = new google.maps.DirectionsService();
              directionsDisplay = new google.maps.DirectionsRenderer();
              directionsDisplay.setMap(map);
              directionsDisplay.setDirections(response);
-             showOpeningHouse(place)
-             $('#schedule').append('<img src="img/star.png" style="width:20px;height:20px">Add the favourites</img>');
+             showOpeningHours(place)
+             $('#schedule').append('<div><img src="img/star.png" style="width:40px;height:40px">Add the favourites</img></div>');
                }
             });
 
@@ -64,6 +64,21 @@ var directionsService = new google.maps.DirectionsService();
     });
 
   }
+
+function showOpeningHours(place)
+{
+  if(place.opening_hours.weekday_text[0]!=null && place.opening_hours.weekday_text[0]!="")
+  {
+       for(int i=0;i<7;i++)
+       {
+        $('#openinghours').append('<li><h1 style="font-size: 150%>'+place.opening_hours.weekday_text[i]+'</h1></li>')
+       }
+  }
+  else
+  {
+    $('#openinghours').html("No opening hours available");
+  }
+}
 
   //called if the position is not obtained correctly
 function failPosition(error) {
