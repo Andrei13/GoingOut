@@ -23,6 +23,7 @@ var directionsService = new google.maps.DirectionsService();
 
     service.getDetails(request, function (place,status){
     	if (status == google.maps.places.PlacesServiceStatus.OK) {
+        $('#title').html(place.name);
             var mapOptions = {
                 zoom: 12,
                 center: new google.maps.LatLng(place.geometry.location.j,place.geometry.location.C)
@@ -46,7 +47,7 @@ var directionsService = new google.maps.DirectionsService();
              directionsDisplay.setMap(map);
              directionsDisplay.setDirections(response);
              showOpeningHours(place)
-             $('#schedule').append('<div><img src="img/star.png" style="width:40px;height:40px">Add the favourites</img></div>');
+             $('#info').append('<div><img src="img/star.png" style="width:40px;height:40px">Add the favourites</img></div>');
                }
             });
 
