@@ -94,7 +94,13 @@ function onBackKeyDown() {
 
 function addFavourite()
 {
-
+   for(var i=o;i<10;i++)
+   {
+    if(windows.localStorage.getItem("favourite"+i)!=null)
+    {
+      alert("slot "+i+" free");
+    }
+   }
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
