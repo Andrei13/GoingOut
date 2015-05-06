@@ -30,7 +30,7 @@
          else  if (status== google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT)
            {
 
-        //recall the function with a delay of 200 miliseconds in case we have the OVER_QUERY_LIMIT
+        //recall the function with a delay of 100 miliseconds in case we have the OVER_QUERY_LIMIT
         //solution provided by Paulo Rodriguez :  http://stackoverflow.com/questions/12721287/settimeout-to-avoid-over-query-limit
            setTimeout(function(){
              search(position);
