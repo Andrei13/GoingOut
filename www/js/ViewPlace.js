@@ -10,12 +10,11 @@ var directionsService = new google.maps.DirectionsService();
   function search(position)
   {
   	var mapOptions = {
-    zoom: 16,
+    zoom: 12,
     center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
   };
     map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-    directionsDisplay.setMap(map);
     var service = new google.maps.places.PlacesService(map);
 
     var request={
@@ -24,11 +23,18 @@ var directionsService = new google.maps.DirectionsService();
 
     service.getDetails(request, function (place,status){
     	if (status == google.maps.places.PlacesServiceStatus.OK) {
+            var mapOptions = {
+                zoom: 12,
+                center: new google.maps.LatLng(place.geometry.location.j,place.geometry.location.C)
+                  };
+            map = new google.maps.Map(document.getElementById('map-canvas'),
+                      mapOptions);
+            directionsDisplay.setMap(map);
            var marker = new google.maps.Marker({
               map: map,
               position: place.geometry.location
          });
-          directionsDisplay = new google.maps.DirectionsRenderer();
+          
           var request = {
                        origin: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
                        destination:new google.maps.LatLng(place.geometry.location.j,place.geometry.location.C),
@@ -36,6 +42,7 @@ var directionsService = new google.maps.DirectionsService();
                         };
          directionsService.route(request, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
+             directionsDisplay = new google.maps.DirectionsRenderer();
              directionsDisplay.setDirections(response);
                }
             });
