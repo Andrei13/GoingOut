@@ -156,13 +156,13 @@ function getPlaceDetails(thePlace,service)
       {
         if(a.rating==null)
         {
-          return -1;
+          return 1;
         }
           else if (b.rating==null)
           {
-            return 1;
+            return -1;
           }
-        return a.rating - b.rating;
+        return b.rating - a.rating;
       });
   }
 
