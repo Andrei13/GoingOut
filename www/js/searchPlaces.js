@@ -17,12 +17,18 @@ function initialize() {
       switch(('#Sort').val()){     
          case "Name":
           sortByName();
+          $('li').remove();
+          showPlaces();
           break;
          case "Rating":
            sortByRating();
+           $('li').remove();
+          showPlaces();
            break;
           case "Distance":
            sortByDistance();
+           $('li').remove();
+          showPlaces();
            break;
           default :
             alert("Wrong type");
@@ -98,6 +104,7 @@ function getPlaceDetails(thePlace,service)
         currentNrPlacesDisplayed++;
         if(currentNrPlacesDisplayed==nrPlaces)
         {
+          sortByName();
           showPlaces();
           $('li').click(onPlaceClicked);
         
@@ -128,7 +135,7 @@ function getPlaceDetails(thePlace,service)
             i--;
           }
         }
-        sortByName();
+
         for(var i=0;i<Places.length;i++)
         {
           displayPlace(Places[i]);
