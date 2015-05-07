@@ -148,7 +148,7 @@ function getPlaceDetails(thePlace,service)
         var _distance = distance(place.geometry.location.A,place.geometry.location.F,myPos.A,myPos.F);
 
         //save the details we need about each place (reference,rating,types,name,distance)
-        Places[currentNrPlacesDisplayed] = {
+        Places[currentNrPlaces] = {
         "place_id":place.reference,
         "rating":place.rating,
         "types":place.types,
