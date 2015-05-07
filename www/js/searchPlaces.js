@@ -40,11 +40,12 @@ function search(position) {
       Types.push(String(key));
     }
    }
+   var opened = state.openNow;
   var request = {
     location: myPos,
     radius:state.distance,
-    types: Types
-
+    types: Types,
+    opennow : opened
   };
 
   var service = new google.maps.places.PlacesService(map);
