@@ -13,8 +13,8 @@ function initialize() {
     document.addEventListener("backbutton", onBackKeyDown, false); 
     state =JSON.parse(window.sessionStorage.getItem("state"));
     $('.ui-content').mask("Searching");
-    $('#Sort').change(function(){
-      switch(('#Sort').val()){     
+    $('#Sortby').change(function(){
+      switch(('#Sortby').val()){     
          case "Name":
           sortByName();
           $('li').remove();
