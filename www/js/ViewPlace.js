@@ -73,7 +73,7 @@ function showOpeningHours(place)
   try{
        for(var i=0;i<7;i++)
        {
-        $('#openinghours').append('<li><h1 style="font-size: 150%">'+
+        $('#openinghours').append('<li><h1 style="font-size: 110%">'+
                      place.opening_hours.weekday_text[i]+'</h1></li>').listview('refresh');
        }
      $('#addFav').click(addFavourite);
@@ -98,6 +98,7 @@ function addFavourite()
 {
   var ok=false;
   var i=0;
+  var details;
    while(ok!=true)
    {
     if(window.localStorage.getItem("favourite"+i)==null)

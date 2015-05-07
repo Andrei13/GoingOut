@@ -80,10 +80,10 @@ function getPlaceDetails(thePlace,service)
         "name":place.name,
         "distance": (_distance*1000) | 0
       }
-        displayPlace(Places[currentNrPlacesDisplayed]);
         currentNrPlacesDisplayed++;
         if(currentNrPlacesDisplayed==nrPlaces)
         {
+          showPlaces();
           $('li').click(onPlaceClicked);
         
           $('.ui-content').unmask();
@@ -101,15 +101,31 @@ function getPlaceDetails(thePlace,service)
       }
       
   });
-
-      /*
-      marker = new google.maps.Marker({
-      position: places[i].geometry.location,
-      map: map,
-      title: 'your location'});
-      */
       }
 
+  function showPlaces()
+    {
+        for(var i=0;i<Places.length;i++)
+        {
+          if(Places[i].distance>state.distance)
+          {
+            Places.splice(i,1);
+            i--;
+          }
+        }
+        sortByName();
+        for(var i=0;i<Places.length;i++)
+        {
+          displayPlace(Places[i]);
+        }
+    }
+
+  function sortByName()
+  {
+    Places.sort(function(a,b)
+      {
+        return a.name.localeCompare(b.name)});
+  }
   function onPlaceClicked(e)
   {
     window.sessionStorage.setItem("selectedPlace",e.currentTarget.id);
