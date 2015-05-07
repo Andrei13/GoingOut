@@ -98,7 +98,6 @@ function addFavourite()
 {
   var ok=false;
   var i=0;
-  var details;
    while(ok!=true)
    {
     if(window.localStorage.getItem("favourite"+i)==null)
@@ -114,7 +113,7 @@ function addFavourite()
       else{
         //check if the selected place is already in the favourites list
         var s=JSON.parse(window.localStorage.getItem("favourite"+i));
-        if(s.name==details.name)
+        if(s.name==selectedPlace.name)
         {
           return 0;
         }
