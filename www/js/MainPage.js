@@ -109,11 +109,13 @@
     function onPause() {
 	
     }
-	
+	  
+    //Handler the resume event
 	function onResume() {
 		
     }
-
+     
+     //handler the backkey event
     function onBackKeyDown() {
        navigator.app.exitApp();
 }

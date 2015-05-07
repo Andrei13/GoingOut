@@ -1,7 +1,5 @@
 
 //Open the main page after 2 seconds
-
-
 function onLoad(){
 	//cordova.exec(null, null, "SplashScreen", "show", []);
 	setTimeout(function(){
