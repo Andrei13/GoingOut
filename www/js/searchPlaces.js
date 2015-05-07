@@ -13,6 +13,21 @@ function initialize() {
     document.addEventListener("backbutton", onBackKeyDown, false); 
     state =JSON.parse(window.sessionStorage.getItem("state"));
     $('.ui-content').mask("Searching");
+    $('#Sort').change(function(){
+      switch(('#Sort').val()){     
+         case "Name":
+          sortByName();
+          break;
+         case "Rating":
+           sortByRating();
+           break;
+          case "Distance":
+           sortByDistance();
+           break;
+          default :
+            alert("Wrong type");
+    }
+  }
 }
 
 
@@ -124,8 +139,26 @@ function getPlaceDetails(thePlace,service)
   {
     Places.sort(function(a,b)
       {
-        return a.name.localeCompare(b.name)});
+        return a.name.localeCompare(b.name)
+      });
   }
+
+  function sortByRating()
+  {
+    Places.sort(function(a,b)
+      {
+        return a.rating.localeCompare(b.rating)
+      });
+  }
+
+  function sortByDistance()
+  {
+    Places.sort(function(a,b)
+      {
+        return a.distance-b.distance;
+      });
+  }
+
   function onPlaceClicked(e)
   {
     window.sessionStorage.setItem("selectedPlace",e.currentTarget.id);
