@@ -96,7 +96,8 @@
     //A message to appear only when the user uses the app for the first time
     if(window.localStorage.getItem("firstuse")=="false")
     {
-        alert("welcome");
+        alert("Welcome to GoingOut. You can search for places around, just select the distance and the types you want."+
+              " Also you can add places to favourites and you will be able to see their opening hours without an internet connection!");
         window.localStorage.setItem("firstuse","true");
     }	
     document.addEventListener("resume", onResume, false);
