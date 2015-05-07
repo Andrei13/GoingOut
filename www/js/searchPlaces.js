@@ -45,7 +45,7 @@ function search(position) {
     location: myPos,
     radius:state.distance,
     types: Types,
-    opennow 
+    openNow : opened
   };
 
   var service = new google.maps.places.PlacesService(map);
