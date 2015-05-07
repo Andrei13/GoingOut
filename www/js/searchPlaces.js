@@ -27,7 +27,7 @@ function initialize() {
           default :
             alert("Wrong type");
     }
-  }
+  });
 }
 
 
