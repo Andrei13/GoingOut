@@ -106,16 +106,13 @@ function addFavourite()
         "name": selectedPlace.name,
         "openinghours": selectedPlace.opening_hours.weekday_text
       }
-      /*
-      for(var i=0;i<7;i++)
-      {
-        details.openinghours[i]=selectedPlace.opening_hours.weekday_text[i];
-      }*/
       window.localStorage.setItem("favourite"+i, JSON.stringify(details));
       ok=true;
+      alert("Added to favourites");
       }
       else{
-        var s=window.localStorage.getItem("favourite"+i);
+        //check if the selected place is already in the favourites list
+        var s=JSON.parse(window.localStorage.getItem("favourite"+i));
         if(s.name==details.name)
         {
           return 0;
