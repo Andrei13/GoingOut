@@ -14,7 +14,7 @@ function initialize() {
     state =JSON.parse(window.sessionStorage.getItem("state"));
     $('.ui-content').mask("Searching");
     $('#Sortby').change(function(){
-      switch(('#Sortby').val()){     
+      switch($('#Sortby').val()){     
          case "Name":
           sortByName();
           $('li').remove();
