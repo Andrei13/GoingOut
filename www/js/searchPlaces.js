@@ -154,7 +154,15 @@ function getPlaceDetails(thePlace,service)
   {
     Places.sort(function(a,b)
       {
-        return a.rating.localeCompare(b.rating)
+        if(a.rating==null)
+        {
+          return -1;
+        }
+          else if (b.rating==null)
+          {
+            return 1;
+          }
+        return a.rating - b.rating;
       });
   }
 
