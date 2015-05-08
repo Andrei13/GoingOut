@@ -282,7 +282,7 @@ function getPlaceDetails(thePlace,service)
     if(his==null)
     {
        his={
-        "places"=new Array()
+        "places":new Array()
        }
     }
     var selectedPlace = {
