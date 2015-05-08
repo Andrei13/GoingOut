@@ -5,11 +5,11 @@
   	var history = JSON.parse(window.localStorage.getItem("history"));
   	for(var i=0;i<history.places.length;i++)
   	{
-  		$('#historylist').append('<li id="'+history.place[i].id+'">'+history.places[i].text+'</li>');
+  		$('#historylist').append('<li id="'+history.place[i].reference+'">'+history.places[i].text+'</li>').listview('refresh');
   	}
   	$('li').click(function(e)
   	{
-        window.sessionStorage.setItem("selectedPlace",e.currentTarget.id);
+        window.sessionStorage.setItem("selectedPlace",e.currentTarget.reference);
         window.location="ViewPlace.html";
   	});
 
