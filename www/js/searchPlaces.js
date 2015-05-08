@@ -286,7 +286,7 @@ function getPlaceDetails(thePlace,service)
        }
     }
     var selectedPlace = {
-        "reference":e.currentTarget.id;
+        "reference":e.currentTarget.id,
         "text":e.currentTarget.innerText
     }
     his.places.push(selectedPlace);
