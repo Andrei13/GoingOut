@@ -125,7 +125,7 @@ function failPosition(error) {
 }
 
 function onBackKeyDown() {
-       window.location='showPlaces.html';
+       window.location='MainPage.html';
 }
 
 //handler for the click event of the "add to favourites" element
