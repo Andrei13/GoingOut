@@ -228,7 +228,7 @@ function getPlaceDetails(thePlace,service)
         var myTypes=place.types;
         myTypes[myTypes.length-1]="";
 
-        //var photos =PlacePhoto.getUrl("https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference="+place.reference+"&key=AIzaSyDF1zioHATJVABiPqEK8mSB0fvhCj4hsV0");
+        
         //display the place as a 'li'
         $('#PlacesList').append('<li id="'+place.place_id+'"><h1 style="font-size: 150%">'+
                                              place.name+'</h1><h2>'+rating +'</h2><h2>'+place.distance+' meters away</h2><p>'+
@@ -276,7 +276,22 @@ function getPlaceDetails(thePlace,service)
   {
     //save the reference of the selected place
     window.sessionStorage.setItem("selectedPlace",e.currentTarget.id);
-
+    
+    //add to history
+    var his = JSON.parse(window.localStorage.getItem("history"));
+    if(his==null)
+    {
+       his={
+        "places"=new Array()
+       }
+    }
+    var selectedPlace = {
+        "reference":e.currentTarget.id;
+        "text":e.currentTarget.innerText
+    }
+    his.places.push(selectedPlace);
+    window.localStorage.setItem("history",JSON.stringify(his));
+     
     //open a new window where the user will see more details
     window.location="ViewPlace.html";
   }
