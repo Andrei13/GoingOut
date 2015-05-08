@@ -9,7 +9,7 @@
   	}
   	$('li').click(function(e)
   	{
-        window.sessionStorage.setItem("selectedPlace",e.currentTarget.reference);
+        window.sessionStorage.setItem("selectedPlace",e.currentTarget.id);
         window.location="ViewPlace.html";
   	});
 

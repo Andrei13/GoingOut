@@ -287,7 +287,7 @@ function getPlaceDetails(thePlace,service)
     }
     var selectedPlace = {
         "reference":e.currentTarget.id,
-        "text":e.currentTarget.innerText.substr(0, addy.indexOf('\n'))
+        "text":e.currentTarget.innerText.substr(0, addy.indexOf("\n"))
     }
     his.places.push(selectedPlace);
     window.localStorage.setItem("history",JSON.stringify(his));
