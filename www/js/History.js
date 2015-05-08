@@ -5,7 +5,7 @@
   	var history = JSON.parse(window.localStorage.getItem("history"));
   	for(var i=0;i<history.places.length;i++)
   	{
-  		$('#historylist').append('<li id="'+history.place[i].reference+'">'+history.places[i].text+'</li>').listview('refresh');
+  		$('#historylist').append('<li id="'+history.places[i].reference+'">'+history.places[i].text+'</li>').listview('refresh');
   	}
   	$('li').click(function(e)
   	{
